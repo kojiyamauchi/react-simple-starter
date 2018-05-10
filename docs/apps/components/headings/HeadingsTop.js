@@ -2,8 +2,8 @@
   Headings Top.
 */
 
-// Import React & Component.
-import React, { Component } from 'react'
+// Import React.
+import React from 'react'
 
 // Import Styled Components.
 import styled from 'styled-components'
@@ -14,27 +14,19 @@ import * as style from '@/styles/Variables'
 // Add Styles.
 const HeadingsTopWrap = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  h1 {
+  h2 {
     font-size: 3rem;
     font-weight: 300;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
 `
 
-// Core.
-export class HeadingsTop extends Component {
-
-  // Render.
-  render() {
-    return (
-      <HeadingsTopWrap>
-      <h1>Let’s Begin Now!!!</h1>
-      </HeadingsTopWrap>
-    )
-  }
-
-}
+// Component.
+export default () => (
+  <HeadingsTopWrap>
+    <h2>This is Top Page.</h2>
+  </HeadingsTopWrap>
+)

@@ -3,16 +3,23 @@
 */
 
 // Import React.
-import * as React from 'react'
+import React from 'react'
 
 // Import React DOM.
-import * as ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 
 // Import Component.
-import App from '@/components/App'
+import App from '@/apps/App'
+
+import { BrowserRouter } from 'react-router-dom'
 
 // Import Global Styles.
 import '@/styles/StyleGlobal'
 
 // Render on index.html
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('app')
+)
