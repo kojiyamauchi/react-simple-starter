@@ -5,7 +5,7 @@
 // Import React.
 import React from 'react'
 
-// Import BrowserRouter of React Router DOM.
+// Import Route & Switch on React Router DOM.
 import { Route, Switch } from 'react-router-dom'
 
 // Import Components.

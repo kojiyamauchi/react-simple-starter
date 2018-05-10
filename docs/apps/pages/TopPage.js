@@ -8,6 +8,9 @@ import React from 'react'
 // Import Component.
 import HeadingsTop from '@/apps/components/headings/HeadingsTop'
 
+// Import Logo1.
+import Logo1 from '@/images/logo1'
+
 // Import Styled Components.
 import styled from 'styled-components'
 
@@ -21,7 +24,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-image: url(../react-spa-starter-kit/images/logo1.svg);
+  background-image: url(${Logo1});
   background-repeat: no-repeat;
   background-size: 25% auto;
   background-position: 80% center;

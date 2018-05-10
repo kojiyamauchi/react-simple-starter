@@ -8,6 +8,9 @@ import React from 'react'
 // Import Component.
 import HeadingsThird from '@/apps/components/headings/HeadingsThird'
 
+// Import Logo3.
+import Logo3 from '@/images/logo3'
+
 // Import Styled Components.
 import styled from 'styled-components'
 
@@ -21,7 +24,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-image: url(../react-spa-starter-kit/images/logo3.svg);
+  background-image: url(${Logo3});
   background-repeat: no-repeat;
   background-size: 25% auto;
   background-position: 80% center;

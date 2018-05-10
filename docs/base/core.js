@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom'
 // Import Component.
 import App from '@/apps/App'
 
+// Import BrowserRouter on React Router DOM.
 import { BrowserRouter } from 'react-router-dom'
 
 // Import Global Styles.

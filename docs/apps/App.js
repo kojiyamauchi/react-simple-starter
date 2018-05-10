@@ -25,7 +25,7 @@ const AppWrap = styled.div`
   padding: 50px 0 20px;
 `
 
-// Core.
+// Component.
 export default () => (
   <AppWrap>
     <Header />

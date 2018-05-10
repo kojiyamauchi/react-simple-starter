@@ -5,6 +5,7 @@
 // Import React.
 import React from 'react'
 
+// Import Link on React Router DOM.
 import { Link } from 'react-router-dom'
 
 // Import Styled Components.
@@ -31,20 +32,20 @@ const Navigation = styled.div`
 
 // Component.
 export default () => (
-    <Navigation>
-      <ul>
-        <li>
-          <Link to="/react-spa-starter-kit/">Top Page</Link>
-        </li>
-        <li>
-          <Link to="/react-spa-starter-kit/second">Second Page</Link>
-        </li>
-        <li>
-          <Link to="/react-spa-starter-kit/third">Third Page</Link>
-        </li>
-        <li>
-          <Link to="/react-spa-starter-kit/third/other">Other Page</Link>
-        </li>
-      </ul>
-    </Navigation>
+  <Navigation>
+    <ul>
+      <li>
+        <Link to="/react-spa-starter-kit/">Top Page</Link>
+      </li>
+      <li>
+        <Link to="/react-spa-starter-kit/second">Second Page</Link>
+      </li>
+      <li>
+        <Link to="/react-spa-starter-kit/third">Third Page</Link>
+      </li>
+      <li>
+        <Link to="/react-spa-starter-kit/third/other">Other Page</Link>
+      </li>
+    </ul>
+  </Navigation>
 )
