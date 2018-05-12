@@ -9,7 +9,7 @@ import React from 'react'
 import HeadingsOther from '@/apps/components/headings/HeadingsOther'
 
 // Import Logo4.
-import Logo4 from '@/images/logo4'
+import Logo4 from '@/apps/images/logo4'
 
 // Import Styled Components.
 import styled from 'styled-components'
