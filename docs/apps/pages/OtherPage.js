@@ -1,8 +1,8 @@
 /*
-  Third Page.
+  Other Page.
 */
 
-// Import React & Component.
+// Import React.
 import React from 'react'
 
 // Import Component.
