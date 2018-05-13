@@ -8,15 +8,16 @@ import React from 'react'
 // Import Styled Components.
 import styled from 'styled-components'
 
+// Import Style Mixins.
+import * as styleMixins from '@/styles/StyleMixins'
+
 // Import Style Variables.
-import * as style from '@/styles/Variables'
+import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
 const Footer = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${styleMixins.FlexCenter}
   a {
     font-family: Lobster, cursive;
     font-size: 1.5em;

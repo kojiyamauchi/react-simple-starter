@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 // Import Style Variables.
-import * as style from '@/styles/Variables'
+import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
 const Navigation = styled.div`

@@ -8,20 +8,15 @@ import React from 'react'
 // Import Styled Components.
 import styled from 'styled-components'
 
+// Import Style Mixins.
+import * as styleMixins from '@/styles/StyleMixins'
+
 // Import Style Variables.
-import * as style from '@/styles/Variables'
+import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
 const HeadingsOtherWrap = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    transform: translateY(-100%);
-  }
+  ${styleMixins.Heading02}
 `
 
 // Component.

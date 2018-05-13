@@ -9,25 +9,21 @@ import React from 'react'
 import HeadingsThird from '@/apps/components/headings/HeadingsThird'
 
 // Import Logo3.
-import Logo3 from '@/apps/images/logo3'
+import Logo3 from '@/materials/images/logo3'
 
 // Import Styled Components.
 import styled from 'styled-components'
 
+// Import Style Mixins.
+import * as styleMixins from '@/styles/StyleMixins'
+
 // Import Style Variables.
-import * as style from '@/styles/Variables'
+import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
 const Main = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  ${styleMixins.pagesStyle}
   background-image: url(${Logo3});
-  background-repeat: no-repeat;
-  background-size: 25% auto;
-  background-position: 80% center;
 `
 
 // Component.

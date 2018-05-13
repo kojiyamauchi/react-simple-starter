@@ -12,16 +12,17 @@ import Navigation from '@/apps/components/navigation/Navigation'
 // Import Styled Components.
 import styled from 'styled-components'
 
+// Import Style Mixins.
+import * as styleMixins from '@/styles/StyleMixins'
+
 // Import Style Variables.
-import * as style from '@/styles/Variables'
+import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
 const Header = styled.div`
   width: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${styleMixins.FlexCenter}
 `
 
 // Component.
