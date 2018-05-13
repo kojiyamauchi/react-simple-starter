@@ -9,7 +9,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // Import Component.
-import App from '@/apps/App'
+import App from '@/App'
 
 // Import Global Styles.
 import '@/styles/StyleGlobal'

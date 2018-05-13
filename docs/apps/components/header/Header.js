@@ -6,8 +6,8 @@
 import React from 'react'
 
 // Import Component.
-import HeadingsGlobal from '@/apps/components/headings/HeadingsGlobal'
-import Navigation from '@/apps/components/navigation/Navigation'
+import HeadingsGlobal from '@/components/headings/HeadingsGlobal'
+import Navigation from '@/components/navigation/Navigation'
 
 // Import Styled Components.
 import styled from 'styled-components'

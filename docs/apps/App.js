@@ -6,9 +6,9 @@
 import React from 'react'
 
 // Import Components.
-import Header from '@/apps/components/header/Header'
-import Routes from '@/apps/routes/Routes'
-import Footer from '@/apps/components/footer/Footer'
+import Header from '@/components/header/Header'
+import Routes from '@/routes/Routes'
+import Footer from '@/components/footer/Footer'
 
 // / Import Styled Components.
 import styled from 'styled-components'

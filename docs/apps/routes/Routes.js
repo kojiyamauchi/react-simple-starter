@@ -9,10 +9,10 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 // Import Components.
-import TopPage from '@/apps/pages/TopPage'
-import SecondPage from '@/apps/pages/SecondPage'
-import ThirdPage from '@/apps/pages/ThirdPage'
-import OtherPage from '@/apps/pages/OtherPage'
+import TopPage from '@/pages/TopPage'
+import SecondPage from '@/pages/SecondPage'
+import ThirdPage from '@/pages/ThirdPage'
+import OtherPage from '@/pages/OtherPage'
 
 // Component.
 export default () => (

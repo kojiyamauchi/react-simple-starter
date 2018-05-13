@@ -6,7 +6,7 @@
 import React from 'react'
 
 // Import Component.
-import HeadingsTop from '@/apps/components/headings/HeadingsTop'
+import HeadingsTop from '@/components/headings/HeadingsTop'
 
 // Import Logo1.
 import Logo1 from '@/materials/images/logo1'

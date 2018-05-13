@@ -6,7 +6,7 @@
 import React from 'react'
 
 // Import Component.
-import HeadingsThird from '@/apps/components/headings/HeadingsThird'
+import HeadingsThird from '@/components/headings/HeadingsThird'
 
 // Import Logo3.
 import Logo3 from '@/materials/images/logo3'
