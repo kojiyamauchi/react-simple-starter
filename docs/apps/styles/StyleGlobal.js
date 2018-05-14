@@ -5,6 +5,9 @@
 // Import Styled Components.
 import { injectGlobal } from 'styled-components'
 
+// Import Style Mixins.
+import * as styleMixins from '@/styles/StyleMixins'
+
 // Import Style Variables.
 import * as styleVariables from '@/styles/StyleVariables'
 
@@ -37,7 +40,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 html {
   width: 100vw;
   height: 100%;
-  font-size: 100%;
+  font-size: 65%;
+  ${styleMixins.breakPoint.mobile` font-size: 100%;`}
 }
 
 body {

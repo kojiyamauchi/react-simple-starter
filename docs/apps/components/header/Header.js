@@ -19,7 +19,7 @@ import * as styleMixins from '@/styles/StyleMixins'
 import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
-const Header = styled.div`
+const HeaderWrap = styled.div`
   width: 100%;
   flex-direction: column;
   ${styleMixins.FlexCenter}
@@ -27,8 +27,8 @@ const Header = styled.div`
 
 // Component.
 export default () => (
-  <Header>
+  <HeaderWrap>
     <HeadingsGlobal />
     <Navigation />
-  </Header>
+  </HeaderWrap>
 )

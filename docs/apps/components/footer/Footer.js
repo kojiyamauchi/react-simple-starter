@@ -15,7 +15,7 @@ import * as styleMixins from '@/styles/StyleMixins'
 import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
-const Footer = styled.div`
+const FooterWrap = styled.div`
   width: 100%;
   ${styleMixins.FlexCenter}
   a {
@@ -27,9 +27,9 @@ const Footer = styled.div`
 
 // Component.
 export default () => (
-  <Footer>
+  <FooterWrap>
     <a href="http://kojiyamauchi.com">
       © All The Small Things, All Rights Reserved.
     </a>
-  </Footer>
+  </FooterWrap>
 )
