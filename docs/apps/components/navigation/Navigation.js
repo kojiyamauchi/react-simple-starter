@@ -3,7 +3,7 @@
 */
 
 // Import React.
-import React from 'react'
+import React, { Component } from 'react'
 
 // Import Link on React Router DOM.
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ import styled from 'styled-components'
 import * as styleVariables from '@/styles/StyleVariables'
 
 // Add Styles.
-const Navigation = styled.div`
+const NavigationWrap = styled.div`
   width: 100%;
   ul {
     width: 60%;
@@ -31,21 +31,32 @@ const Navigation = styled.div`
 `
 
 // Component.
-export default () => (
-  <Navigation>
-    <ul>
-      <li>
-        <Link to="/react-spa-starter-kit/">Top Page</Link>
-      </li>
-      <li>
-        <Link to="/react-spa-starter-kit/second">Second Page</Link>
-      </li>
-      <li>
-        <Link to="/react-spa-starter-kit/third">Third Page</Link>
-      </li>
-      <li>
-        <Link to="/react-spa-starter-kit/third/other">Other Page</Link>
-      </li>
-    </ul>
-  </Navigation>
-)
+class Navigation extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      nav: [
+        { path: '/react-spa-starter-kit/', letter: 'Top Page' } ,
+        { path: '/react-spa-starter-kit/second',letter: 'Second Page' } ,
+        { path: '/react-spa-starter-kit/third', letter: 'Third Page' } ,
+        { path: '/react-spa-starter-kit/third/other', letter: 'Other Page' } ,
+      ]
+    }
+
+  }
+
+  render() {
+    return (
+      <NavigationWrap>
+        <ul>
+        {this.state.nav.map((nav, i) => {
+          return <Link key={i} to={`${nav.path}`}>{nav.letter}</Link>
+        })}
+        </ul>
+      </NavigationWrap>
+    )
+  }
+}
+
+export default Navigation
