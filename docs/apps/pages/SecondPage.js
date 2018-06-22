@@ -6,7 +6,7 @@
 import React from 'react'
 
 // Import Component.
-import HeadingsSecond from '@/components/headings/HeadingsSecond'
+import HeadingsPage from '@/components/headings/HeadingsPage'
 
 // Import Logo2.
 import Logo2 from '@/materials/images/logo2'
@@ -29,6 +29,6 @@ const Main = styled.div`
 // Component.
 export default () => (
   <Main>
-    <HeadingsSecond />
+    <HeadingsPage letter="Second" />
   </Main>
 )
