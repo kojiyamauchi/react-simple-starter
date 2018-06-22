@@ -17,9 +17,9 @@ import OtherPage from '@/pages/OtherPage'
 // Component.
 export default () => (
   <Switch>
-    <Route exact path="/react-spa-starter-kit/" component={TopPage} />
-    <Route exact path="/react-spa-starter-kit/second" component={SecondPage} />
-    <Route exact path="/react-spa-starter-kit/third" component={ThirdPage} />
-    <Route exact path="/react-spa-starter-kit/third/other" component={OtherPage} />
+    <Route exact path="/react-spa-starter-kit/" component={ TopPage } />
+    <Route exact path="/react-spa-starter-kit/second" component={ SecondPage } />
+    <Route exact path="/react-spa-starter-kit/third" component={ ThirdPage } />
+    <Route exact path="/react-spa-starter-kit/third/other" component={ OtherPage } />
   </Switch>
 )
