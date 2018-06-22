@@ -15,8 +15,8 @@ Small Mobile.  => ${styleMixins.breakPoint.smallMobile` Add CSS Property `}
 Mobile.        => ${styleMixins.breakPoint.mobile` Add CSS Property `}
 Large Mobile.  => ${styleMixins.breakPoint.largeMobile` Add CSS Property `}
 Tablet.        => ${styleMixins.breakPoint.tablet` Add CSS Property `}
-Desktop.       => ${styleMixins.breakPoint.deskTop` Add CSS Property `}
-Large Desktop. => ${styleMixins.breakPoint.smallMobile` Add CSS Property `}
+Desktop.       => ${styleMixins.breakPoint.desktop` Add CSS Property `}
+Large Desktop. => ${styleMixins.breakPoint.largeDesktop` Add CSS Property `}
 */
 export const breakPoint = Object.keys(styleVariables.BREAK_POINT_WIDTH).reduce((index, BB) => {
 index[BB] = (...args) => styled.css`
@@ -39,8 +39,8 @@ export const pagesStyle = styled.css`
   background-position: 80% center;
 `
 
-// Heading02 Mixins.
-export const Heading02 = styled.css`
+// Pages Heading Mixins.
+export const HeadingsPage = styled.css`
 width: 100%;
 display: flex;
 justify-content: center;
