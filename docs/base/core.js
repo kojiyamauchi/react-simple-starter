@@ -2,6 +2,8 @@
   Core.
 */
 
+'use strict'
+
 // Import React.
 import React from 'react'
 
