@@ -7,7 +7,7 @@ import React from 'react'
 
 // Import Components.
 import Header from '@/components/header/Header'
-import Routes from '@/routes/Routes'
+import Router from '@/router/Router'
 import Footer from '@/components/footer/Footer'
 
 // / Import Styled Components.
@@ -29,7 +29,7 @@ const AppWrap = styled.div`
 export default () => (
   <AppWrap>
     <Header />
-    <Routes />
+    <Router />
     <Footer />
   </AppWrap>
 )
