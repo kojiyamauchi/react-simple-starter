@@ -17,7 +17,7 @@ injectGlobal`
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, button, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, select, summary, time, mark, audio, video {
   font-family: ${styleVariables.GLOBAL_FONT};
   color: ${styleVariables.GLOBAL_COLOR};
   font-size: 100%;
@@ -35,11 +35,11 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -ms-box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 html {
   width: 100vw;
-  height: 100%;
   font-size: 65%;
   ${styleMixins.breakPoint.mobile` font-size: 100%;`}
 }
@@ -120,12 +120,16 @@ select,
 button {
   border-radius: 0;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 textarea {
   resize: vertical;
   border-radius: 0;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 ::selection {
