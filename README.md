@@ -1,3 +1,5 @@
-# 🎸 React SPA Starter Kit. 🎸
+# ☕️ React Simple Starter Kit. ☕️  
 
-<https://kojiyamauchi.github.io/react-spa-starter-kit/>  
+## During Update.
+
+<https://kojiyamauchi.github.io/react-simple-starter-kit/>  
