@@ -2,31 +2,22 @@
   Core.
 */
 
-'use strict'
-
-// Import React.
-import React from 'react'
-
-// Import React DOM.
+import * as React from 'react'
 import ReactDOM from 'react-dom'
-
-// Import Component.
 import App from '@/App'
-
-// Import Global Styles.
-import '@/styles/StyleGlobal'
-
+// For Global Style.
+import { GlobalStyle } from '@/styles/StyleGlobal'
 // Import AppContainer on React Hot Loader.
 import { AppContainer } from 'react-hot-loader'
-
 // Import BrowserRouter on React Router DOM.
 import { BrowserRouter } from 'react-router-dom'
 
 // Render Function.
-const render = component => {
+const render = (_component: React.FunctionComponent<{}>): void => {
   ReactDOM.render(
     <AppContainer>
       <BrowserRouter>
+        <GlobalStyle />
         <App />
       </BrowserRouter>
     </AppContainer>,

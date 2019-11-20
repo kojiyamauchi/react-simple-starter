@@ -2,21 +2,12 @@
   App.
 */
 
-// Import React.
-import React from 'react'
-
-// Import Components.
+import * as React from 'react'
 import Header from '@/components/header/Header'
 import Router from '@/router/Router'
 import Footer from '@/components/footer/Footer'
-
-// / Import Styled Components.
 import styled from 'styled-components'
 
-// Import Style Variables.
-import * as styleVariables from '@/styles/StyleVariables'
-
-// Add Styles.
 const AppWrap = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -25,11 +16,14 @@ const AppWrap = styled.div`
   padding: 50px 0 20px;
 `
 
-// Component.
-export default () => (
-  <AppWrap>
-    <Header />
-    <Router />
-    <Footer />
-  </AppWrap>
-)
+const App: React.FC = (): JSX.Element => {
+  return (
+    <AppWrap>
+      <Header />
+      <Router />
+      <Footer />
+    </AppWrap>
+  )
+}
+
+export default App

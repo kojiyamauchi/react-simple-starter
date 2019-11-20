@@ -3,7 +3,7 @@
 */
 
 // Import Styled Components.
-import * as styled from 'styled-components'
+import { css, styled } from 'styled-components'
 
 // Import Style Variables.
 import * as styleVariables from '@/styles/StyleVariables'
@@ -19,16 +19,16 @@ Desktop.       => ${styleMixins.breakPoint.desktop` Add CSS Property `}
 Large Desktop. => ${styleMixins.breakPoint.largeDesktop` Add CSS Property `}
 */
 export const breakPoint = Object.keys(styleVariables.BREAK_POINT_WIDTH).reduce((index, BB) => {
-index[BB] = (...args) => styled.css`
-  @media (min-width: ${styleVariables.BREAK_POINT_WIDTH[BB]}px) {
-    ${ styled.css(...args) }
-  }
-`
-return index
+  index[BB] = (...args) => css`
+    @media (min-width: ${styleVariables.BREAK_POINT_WIDTH[BB]}px) {
+      ${css(...args)};
+    }
+  `
+  return index
 }, {})
 
 // Pages Mixins.
-export const pagesStyle = styled.css`
+export const pagesStyle = css`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -40,41 +40,42 @@ export const pagesStyle = styled.css`
 `
 
 // Pages Heading Mixins.
-export const HeadingsPage = styled.css`
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-h2 {
-  font-size: 3rem;
-  font-weight: 300;
-  transform: translateY(-100%);
-}
+export const HeadingsPage = css`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    transform: translateY(-100%);
+  }
 `
 
 // Flex Center. (Utilities)
-export const FlexCenter = styled.css`
+export const FlexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
 // Flex Horizontal Space Between. (Utilities)
-export const FlexHorizontalBetween = styled.css`
+export const FlexHorizontalBetween = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
 // Flex Horizontal Flex Start. (Utilities)
-export const FlexHorizontalStart = styled.css`
+export const FlexHorizontalStart = css`
   display: flex;
   justify-content: flex-start;
   align-items: center;
 `
 
 // Flex Horizontal Flex End. (Utilities)
-export const FlexHorizontalEnd = styled.css`
+export const FlexHorizontalEnd = css`
   display: flex;
   justify-content: flex-end;
   align-items: center;
