@@ -21,7 +21,7 @@ const List = styled.div`
   }
 `
 
-interface Props {
+type Props = {
   pagenavigation: JSX.Element[]
 }
 

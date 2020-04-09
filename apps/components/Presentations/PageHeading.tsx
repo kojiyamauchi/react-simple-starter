@@ -6,7 +6,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as styleMixins from '@/styles/StyleMixins'
 
-interface Props {
+type Props = {
   letter: string
   className?: string
 }
