@@ -9,8 +9,6 @@ import Navigation from '@/components/Presentations/Navigation'
 import styledComponents from 'styled-components'
 import * as styleMixins from '@/styles/StyleMixins'
 
-const { useState } = React
-
 const Wrapper = styledComponents.div`
   width: 100%;
   flex-direction: column;
@@ -18,12 +16,12 @@ const Wrapper = styledComponents.div`
 `
 
 const Header: React.FC = (): JSX.Element => {
-  const [nav] = useState([
+  const nav = [
     { path: '/', letter: 'Top Page', id: 1 },
     { path: '/second', letter: 'Second Page', id: 2 },
     { path: '/third', letter: 'Third Page', id: 3 },
     { path: '/other', letter: 'Other Page', id: 4 }
-  ])
+  ]
 
   const setList = (): JSX.Element[] => {
     return nav.map(
