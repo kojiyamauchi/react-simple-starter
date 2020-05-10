@@ -1,3 +1,3 @@
-enum AddEnumName {
+// enum AddEnumName {
   // Add Member.
-}
+// }

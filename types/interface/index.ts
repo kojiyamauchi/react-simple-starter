@@ -1,3 +1,3 @@
-interface AddName {
+// interface AddName {
   // Add Member
-}
+// }
