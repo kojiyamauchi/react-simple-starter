@@ -11,16 +11,14 @@ type Props = {
   className?: string
 }
 
-const Wrapper = styled.div`
+const PageHeadingComponent: React.FC<Props> = (props): JSX.Element => (
+  <div className={props.className}>
+    <h2 className={props.className}>This is {props.letter} Page.</h2>
+  </div>
+)
+
+const StyledComponent = styled(PageHeadingComponent)`
   ${styleMixins.HeadingsPage};
 `
 
-const PageHeading: React.FC<Props> = (props): JSX.Element => {
-  return (
-    <Wrapper>
-      <h2 className={props.className}>This is {props.letter} Page.</h2>
-    </Wrapper>
-  )
-}
-
-export default PageHeading
+export const PageHeading = StyledComponent

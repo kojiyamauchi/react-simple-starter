@@ -5,7 +5,17 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as styleMixins from '@/styles/StyleMixins'
 
-const Wrapper = styled.div`
+type Props = {
+  className?: string
+}
+
+const GlobalHeadingComponent: React.FC<Props> = (props): JSX.Element => (
+  <div className={props.className}>
+    <h1>React Simple Starter Kit</h1>
+  </div>
+)
+
+const StyledComponent = styled(GlobalHeadingComponent)`
   width: 100%;
   margin: 0 0 40px 0;
   ${styleMixins.FlexCenter};
@@ -17,12 +27,4 @@ const Wrapper = styled.div`
   }
 `
 
-const GlobalHeading: React.FC = (): JSX.Element => {
-  return (
-    <Wrapper>
-      <h1>React Simple Starter Kit</h1>
-    </Wrapper>
-  )
-}
-
-export default GlobalHeading
+export const GlobalHeading = StyledComponent

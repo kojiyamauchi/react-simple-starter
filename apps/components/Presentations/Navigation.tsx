@@ -6,7 +6,14 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as styleMixins from '@/styles/StyleMixins'
 
-const List = styled.div`
+type Props = {
+  pagenavigation: JSX.Element[]
+  className?: string
+}
+
+const NavigationComponent: React.FC<Props> = (props): JSX.Element => <div className={props.className}>{props.pagenavigation}</div>
+
+const StyledComponent = styled(NavigationComponent)`
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -21,12 +28,4 @@ const List = styled.div`
   }
 `
 
-type Props = {
-  pagenavigation: JSX.Element[]
-}
-
-const Navigation: React.FC<Props> = (props): JSX.Element => {
-  return <List>{props.pagenavigation}</List>
-}
-
-export default Navigation
+export const Navigation = StyledComponent

@@ -6,7 +6,17 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as styleMixins from '@/styles/StyleMixins'
 
-const Wrapper = styled.div`
+type Props = {
+  className?: string
+}
+
+const FooterComponent: React.FC<Props> = (props): JSX.Element => (
+  <div className={props.className}>
+    <a href="http://kojiyamauchi.com">© All The Small Things, All Rights Reserved.</a>
+  </div>
+)
+
+const StyledComponent = styled(FooterComponent)`
   width: 100%;
   ${styleMixins.FlexCenter};
 
@@ -18,12 +28,4 @@ const Wrapper = styled.div`
   }
 `
 
-const Footer: React.FC = (): JSX.Element => {
-  return (
-    <Wrapper>
-      <a href="http://kojiyamauchi.com">© All The Small Things, All Rights Reserved.</a>
-    </Wrapper>
-  )
-}
-
-export default Footer
+export const Footer = StyledComponent
