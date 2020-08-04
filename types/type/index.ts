@@ -1,17 +1,17 @@
 type BreakPointWidthMember = {
-  smallMobile: number
-  mobile: number
-  largeMobile: number
-  tablet: number
-  desktop: number
-  largeDesktop: number
+  readonly smallMobile: number
+  readonly mobile: number
+  readonly largeMobile: number
+  readonly tablet: number
+  readonly desktop: number
+  readonly largeDesktop: number
 }
 
 type BreakPointMember = {
-  smallMobile: Function
-  mobile: Function
-  largeMobile: Function
-  tablet: Function
-  desktop: Function
-  largeDesktop: Function
+  smallMobile: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+  mobile: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+  largeMobile: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+  tablet: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+  desktop: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
+  largeDesktop: (arg: TemplateStringsArray) => import('styled-components').FlattenSimpleInterpolation
 }
