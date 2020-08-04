@@ -3,12 +3,24 @@
 */
 
 import * as React from 'react'
-import Header from '@/components/Managements/Header'
-import Router from '@/router/Router'
-import Footer from '@/components/Presentations/Footer'
+import { Header } from '@/components/Managements/Header'
+import { Router } from '@/router/Router'
+import { Footer } from '@/components/Presentations/Footer'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+type Props = {
+  className?: string
+}
+
+const AppComponent: React.FC<Props> = (props): JSX.Element => (
+  <div className={props.className}>
+    <Header />
+    <Router />
+    <Footer />
+  </div>
+)
+
+const StyledComponent = styled(AppComponent)`
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -16,14 +28,4 @@ const Wrapper = styled.div`
   padding: 50px 0 20px;
 `
 
-const App: React.FC = (): JSX.Element => {
-  return (
-    <Wrapper>
-      <Header />
-      <Router />
-      <Footer />
-    </Wrapper>
-  )
-}
-
-export default App
+export const App = StyledComponent
