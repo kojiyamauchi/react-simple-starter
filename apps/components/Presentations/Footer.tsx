@@ -2,29 +2,29 @@
   Footer.
 */
 
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import * as styleMixins from '@/styles/StyleMixins'
+import { FlexCenter, breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
 }
 
-const FooterComponent: React.FC<Props> = (props): JSX.Element => (
-  <div className={props.className}>
+const FooterComponent: React.FC<Props> = ({ className }): JSX.Element => (
+  <div className={className}>
     <a href="http://kojiyamauchi.com">© All The Small Things, All Rights Reserved.</a>
   </div>
 )
 
 const StyledComponent = styled(FooterComponent)`
   width: 100%;
-  ${styleMixins.FlexCenter};
+  ${FlexCenter};
 
   a {
     font-family: Lobster, cursive;
     font-size: 1.5em;
     cursor: pointer;
-    ${styleMixins.breakPoint.largeMobile` font-size: 2.4em `}
+    ${breakPoint.largeMobile` font-size: 2.4em `}
   }
 `
 

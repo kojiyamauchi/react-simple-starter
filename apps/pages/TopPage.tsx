@@ -2,24 +2,24 @@
   TopPage.
 */
 
-import * as React from 'react'
+import React from 'react'
 import { PageHeading } from '@/components/Presentations/PageHeading'
 import Logo from '@/materials/images/logo.png'
 import styled from 'styled-components'
-import * as styleMixins from '@/styles/StyleMixins'
+import { pagesStyle } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
 }
 
-const TopPageComponent: React.FC<Props> = (props): JSX.Element => (
-  <div className={props.className}>
+const TopPageComponent: React.FC<Props> = ({ className }): JSX.Element => (
+  <div className={className}>
     <PageHeading letter="Top" className="primary-page page-heading" />
   </div>
 )
 
 const StyledComponent = styled(TopPageComponent)`
-  ${styleMixins.pagesStyle}
+  ${pagesStyle}
   background-image: url(${Logo});
 `
 

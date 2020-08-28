@@ -2,7 +2,7 @@
   App.
 */
 
-import * as React from 'react'
+import React from 'react'
 import { Header } from '@/components/Managements/Header'
 import { Router } from '@/router/Router'
 import { Footer } from '@/components/Presentations/Footer'
@@ -12,8 +12,8 @@ type Props = {
   className?: string
 }
 
-const AppComponent: React.FC<Props> = (props): JSX.Element => (
-  <div className={props.className}>
+const AppComponent: React.FC<Props> = ({ className }): JSX.Element => (
+  <div className={className}>
     <Header />
     <Router />
     <Footer />

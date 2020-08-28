@@ -2,18 +2,18 @@
   Header.
 */
 
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalHeading } from '@/components/Presentations/GlobalHeading'
 import { Navigation } from '@/components/Presentations/Navigation'
 import styled from 'styled-components'
-import * as styleMixins from '@/styles/StyleMixins'
+import { FlexCenter } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
 }
 
-const HeaderComponent: React.FC<Props> = (props): JSX.Element => {
+const HeaderComponent: React.FC<Props> = ({ className }): JSX.Element => {
   const nav = [
     { path: '/', letter: 'Top Page', id: 1 },
     { path: '/second', letter: 'Second Page', id: 2 },
@@ -32,7 +32,7 @@ const HeaderComponent: React.FC<Props> = (props): JSX.Element => {
   }
 
   return (
-    <div className={props.className}>
+    <div className={className}>
       <GlobalHeading />
       <Navigation pagenavigation={setList()} />
     </div>
@@ -42,7 +42,7 @@ const HeaderComponent: React.FC<Props> = (props): JSX.Element => {
 const StyledComponent = styled(HeaderComponent)`
   width: 100%;
   flex-direction: column;
-  ${styleMixins.FlexCenter};
+  ${FlexCenter};
 `
 
 export const Header = StyledComponent
