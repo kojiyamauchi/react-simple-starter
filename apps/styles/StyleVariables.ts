@@ -12,7 +12,7 @@ export const BREAK_POINT_WIDTH = {
   largeDesktop: 1392
 }
 
-// Typo.
+// Set Global Font.
 export const GLOBAL_FONT =
   '"Source Sans Pro", "Noto Sans Japanese", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", meiryo, sans-serif'
 
