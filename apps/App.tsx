@@ -3,7 +3,7 @@
 */
 
 import React from 'react'
-import { Header } from '@/components/Managements/Header'
+import { HeaderContainer } from '@/components/Managements/HeaderContainer'
 import { Router } from '@/router/Router'
 import { Footer } from '@/components/Presentations/Footer'
 import styled from 'styled-components'
@@ -14,7 +14,7 @@ type Props = {
 
 const AppComponent: React.FC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
-    <Header />
+    <HeaderContainer />
     <Router />
     <Footer />
   </div>

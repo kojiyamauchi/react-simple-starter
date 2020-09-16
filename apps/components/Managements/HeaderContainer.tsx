@@ -1,5 +1,5 @@
 /*
-  Header.
+  Header Container.
 */
 
 import React from 'react'
@@ -13,7 +13,7 @@ type Props = {
   className?: string
 }
 
-const HeaderComponent: React.FC<Props> = ({ className }): JSX.Element => {
+const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
   const nav = [
     { path: '/', letter: 'Top Page', id: 1 },
     { path: '/second', letter: 'Second Page', id: 2 },
@@ -39,10 +39,10 @@ const HeaderComponent: React.FC<Props> = ({ className }): JSX.Element => {
   )
 }
 
-const StyledComponent = styled(HeaderComponent)`
+const StyledComponent = styled(HeaderContainerComponent)`
   width: 100%;
   flex-direction: column;
   ${FlexCenter};
 `
 
-export const Header = StyledComponent
+export const HeaderContainer = StyledComponent
