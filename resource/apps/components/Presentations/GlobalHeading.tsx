@@ -3,7 +3,7 @@
 */
 import React from 'react'
 import styled from 'styled-components'
-import { FlexCenter, breakPoint } from '@/styles/StyleMixins'
+import { FlexCenter, BreakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
@@ -23,7 +23,7 @@ const StyledComponent = styled(GlobalHeadingComponent)`
   h1 {
     font-size: 3em;
     font-weight: 300;
-    ${breakPoint.largeMobile` font-size: 5.6em `}
+    ${BreakPoint.largeMobile` font-size: 5.6em `}
   }
 `
 
