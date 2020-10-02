@@ -11,10 +11,10 @@ import { OtherPage } from '@/pages/OtherPage'
 
 const RouterComponent: React.FC = (): JSX.Element => (
   <Switch>
-    <Route exact path="/" component={TopPage} />
-    <Route exact path="/second" component={SecondPage} />
-    <Route exact path="/third" component={ThirdPage} />
-    <Route exact path="/other" component={OtherPage} />
+    <Route exact path="/react-simple-starter/" component={TopPage} />
+    <Route exact path="/react-simple-starter/second" component={SecondPage} />
+    <Route exact path="/react-simple-starter/third" component={ThirdPage} />
+    <Route exact path="/react-simple-starter/other" component={OtherPage} />
   </Switch>
 )
 

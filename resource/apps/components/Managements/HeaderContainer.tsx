@@ -15,10 +15,10 @@ type Props = {
 
 const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
   const nav = [
-    { path: '/', letter: 'Top Page', id: 1 },
-    { path: '/second', letter: 'Second Page', id: 2 },
-    { path: '/third', letter: 'Third Page', id: 3 },
-    { path: '/other', letter: 'Other Page', id: 4 }
+    { path: '/react-simple-starter/', letter: 'Top Page', id: 1 },
+    { path: '/react-simple-starter/second', letter: 'Second Page', id: 2 },
+    { path: '/react-simple-starter/third', letter: 'Third Page', id: 3 },
+    { path: '/react-simple-starter/other', letter: 'Other Page', id: 4 }
   ]
 
   const setList = (): JSX.Element[] => {
