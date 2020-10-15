@@ -72,14 +72,13 @@ When Development with Multiple People, Use `yarn upgrade`
 ー  
 
 ## 🖋 Memo.
-- If HardSourceWebpackPlugin's Warning Displayed on Terminal.  
-🔎`[hardsource:***] Could not freeze...`  
-Delete HardSourceWebpackPlugin's Cache Dir.  
-  - -> `yarn remove-fast-cache`
+- Next Hot Module Replacement Modules.  
+  - -> [React Refresh webpack Plugin](https://github.com/pmmmwh/react-refresh-webpack-plugin)
 
 ー  
 
 ## ✋ TODO.  
+- When Setup Browsers List, (In package.json or Add `.browserslistrc`) HMR's Does Not Work. 💣
 - To Fast Up the Build, `ts-loader` has `happyPackMode` Enabled. (`transpileOnly: true` is Applied)  
 So,  
 > will not add type-only files (files that contains only interfaces and/or types) to the webpack dependencies set. Webpack watches only files that are in the dependencies set. This means that changes in type-only files will not trigger new compilation.  

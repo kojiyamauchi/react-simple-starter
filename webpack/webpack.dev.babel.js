@@ -8,6 +8,17 @@ import webpackBase from './webpack.base.babel'
 import path from 'path'
 
 export default merge(webpackBase, {
+  /*
+    Persistent Caching.
+    See -> https://webpack.js.org/configuration/other-options/#cache
+    See -> https://blog.hiroppy.me/entry/webpack-persistent-caching
+  */
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename]
+    }
+  },
   plugins: [],
   devtool: 'inline-source-map',
   // For Webpack Dev Sever.
