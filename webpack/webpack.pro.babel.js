@@ -7,7 +7,6 @@ import { merge } from 'webpack-merge'
 import webpackBase from './webpack.base.babel'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
-import licenseInfoWebpackPlugin from 'license-info-webpack-plugin'
 
 const generateRedirect =
   process.env['GITHUB_ACTIONS'] && process.env['ENDPOINT_REDIRECT']
@@ -22,8 +21,6 @@ const generateRedirect =
 
 export default merge(webpackBase, {
   plugins: [
-    // When Minify of Production's File, Keep License Comment Out.
-    new licenseInfoWebpackPlugin({ glob: '{LICENSE,license,License}*' }),
     /* Even when it is already sufficiently compressed,
     the code can be analyzed in detail and the parts
     that are likely to be commonly compressed are compressed more positively */

@@ -5,7 +5,6 @@
 import webpack from 'webpack'
 import path from 'path'
 import ForkTsChecker from 'fork-ts-checker-webpack-plugin'
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
 import WebpackBuildNotifierPlugin from 'webpack-build-notifier'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
@@ -16,7 +15,8 @@ module.exports = {
   // Output Point.
   output: {
     path: path.resolve(__dirname, '../delivery/'),
-    filename: path.join('js', 'core.min.js')
+    filename: path.join('js', 'core.min.js'),
+    assetModuleFilename: 'materials/images/[hash][ext][query]'
     // publicPath: '/' // Setting Root of Top Dir. Unnecessary Maybe...
   },
   module: {
@@ -32,33 +32,29 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [{ loader: 'cache-loader' }, { loader: 'thread-loader' }, { loader: 'babel-loader?cacheDirectory' }]
+        use: ['cache-loader', 'thread-loader', 'babel-loader?cacheDirectory']
       },
       // TS & TSX.
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: [
-          { loader: 'cache-loader' },
-          { loader: 'thread-loader' },
-          { loader: 'babel-loader?cacheDirectory' },
-          { loader: 'ts-loader', options: { happyPackMode: true } }
-        ]
+        use: ['cache-loader', 'thread-loader', 'babel-loader?cacheDirectory', { loader: 'ts-loader', options: { happyPackMode: true } }]
       },
       // Styled Components.
       {
         enforce: 'pre',
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: [{ loader: 'cache-loader' }, { loader: 'thread-loader' }, { loader: 'stylelint-custom-processor-loader', options: { emitWarning: true } }]
+        use: ['cache-loader', 'thread-loader', { loader: 'stylelint-custom-processor-loader', options: { emitWarning: true } }]
       },
       // For Images.
       {
         test: /\.(jpg|png|gif|svg)$/,
-        loaders: 'url-loader',
-        options: {
-          limit: 10000,
-          outputPath: 'materials/images'
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024
+          }
         }
       },
       // For JSX SVG.
@@ -85,33 +81,45 @@ module.exports = {
       // For Inline SVG.
       {
         test: /\.inline.svg$/,
-        loader: 'svg-inline-loader'
+        use: 'svg-inline-loader'
       },
       // For Icon.
       {
         test: /\.ico$/,
-        loaders: 'url-loader',
-        options: {
-          limit: 10000,
-          outputPath: 'materials/icons' // Setting Icons File Output Dir.
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024
+          }
+        },
+        generator: {
+          filename: 'materials/icons/[hash][ext][query]'
         }
       },
       // For Fonts.
       {
         test: /\.(woff|woff2|eot|ttf)$/,
-        loaders: 'url-loader',
-        options: {
-          limit: 10000,
-          outputPath: 'materials/fonts' // Setting Fonts File Output Dir.
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024
+          }
+        },
+        generator: {
+          filename: 'materials/fonts/[hash][ext][query]'
         }
       },
       // For PDF.
       {
         test: /\.pdf$/,
-        loaders: 'url-loader',
-        options: {
-          limit: 10000,
-          outputPath: 'materials/pdf' // Setting PDF File Output Dir.
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024
+          }
+        },
+        generator: {
+          filename: 'materials/pdf/[hash][ext][query]'
         }
       },
       // For JSON (Into Bundle File).
@@ -119,13 +127,13 @@ module.exports = {
         type: 'javascript/auto',
         test: /\.json$/,
         exclude: /node_modules/,
-        loader: 'json-loader'
+        use: 'json-loader'
       },
       // Source Map.
       {
         test: /\.js$/,
         enforce: 'pre',
-        loader: 'source-map-loader'
+        use: 'source-map-loader'
       }
     ]
   },
@@ -146,12 +154,10 @@ module.exports = {
       typescript: {
         diagnosticOptions: {
           semantic: true,
-          syntactic: true,
+          syntactic: true
         }
       }
     }),
-    // For Faster Build.
-    new HardSourceWebpackPlugin(),
     // Notify Desktop When a Compile Error.
     new WebpackBuildNotifierPlugin({ suppressSuccess: 'initial' }),
     // Generate HTML for Endpoint.
