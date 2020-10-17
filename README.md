@@ -78,14 +78,14 @@ When Development with Multiple People, Use `yarn upgrade`
 ー  
 
 ## ✋ TODO.  
-- When Setup Browsers List, (In package.json or Add `.browserslistrc`) HMR's Does Not Work. 💣
+- When Setup Browsers List ( In `package.json` || Add `.browserslistrc` ), HMR's Does Not Work. 💣
 - To Fast Up the Build, `ts-loader` has `happyPackMode` Enabled. (`transpileOnly: true` is Applied)  
 So,  
 > will not add type-only files (files that contains only interfaces and/or types) to the webpack dependencies set. Webpack watches only files that are in the dependencies set. This means that changes in type-only files will not trigger new compilation.  
 -> <https://www.npmjs.com/package/fork-ts-checker-webpack-plugin#type-only-modules-watching>
 - Styled Components V5's `createGlobalStyle` Does Not Work, When `@import`'s (CSS Import, Google Web Fonts etc.) Written Inside. For That, Use V4's Latest.
   - <https://github.com/styled-components/styled-components/releases/tag/v5.0.0>  
-  - When Use `>=5.0.0`, Use `React Helmet` & import with `<link href=“~"/>`
+  - When Use `>=5.0.0`, Use `React Helmet` || `HTML webpack Plugin` & import with `<link href=“~"/>`
 - @types/styled-components When Install Latest Version, @types/react-native's Installed Together.  
   Temporary -> Add `.yarnclean` Ignoring `@types/react-native`
   - <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311>  
