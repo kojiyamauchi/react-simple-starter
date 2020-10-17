@@ -26,7 +26,7 @@ module.exports = {
         enforce: 'pre',
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader'
+        use: 'eslint-loader'
       },
       // ECMA & React.
       {
