@@ -2,7 +2,6 @@
   PagesHeading.
 */
 
-import React from 'react'
 import styled from 'styled-components'
 import { HeadingsPage } from '@/styles/StyleMixins'
 

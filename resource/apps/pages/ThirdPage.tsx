@@ -2,7 +2,6 @@
   ThirdPage.
 */
 
-import React from 'react'
 import { PageHeading } from '@/components/Presentations/PageHeading'
 import Logo from '@/materials/images/logo.png'
 import styled from 'styled-components'

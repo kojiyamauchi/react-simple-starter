@@ -2,7 +2,6 @@
   Header Container.
 */
 
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalHeading } from '@/components/Presentations/GlobalHeading'
 import { Navigation } from '@/components/Presentations/Navigation'

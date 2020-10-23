@@ -2,7 +2,6 @@
   App.
 */
 
-import React from 'react'
 import { HeaderContainer } from '@/components/Managements/HeaderContainer'
 import { Router } from '@/router/Router'
 import { Footer } from '@/components/Presentations/Footer'
