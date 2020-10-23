@@ -2,7 +2,6 @@
   Router.
 */
 
-import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { TopPage } from '@/pages/TopPage'
 import { SecondPage } from '@/pages/SecondPage'
