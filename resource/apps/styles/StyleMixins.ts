@@ -6,7 +6,7 @@
 import { css } from 'styled-components'
 
 // Import Style Variables.
-import { BREAK_POINT_WIDTH } from '@/styles/StyleVariables'
+import { BREAK_POINT_WIDTH } from '@/styles/StyleConstants'
 
 // Break Point.
 /*
