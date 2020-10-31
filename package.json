@@ -148,14 +148,15 @@
     }
   },
   "lint-staged": {
-    "resource/**/!(*.min).{ts,tsx,js}": "eslint　--fix --max-warnings 0",
+    "resource/**/!(*.min).{ts,tsx,js,jsx}": ["eslint --fix --max-warnings 0", "stylelint"],
     "webpack/*.js": "prettier --write --no-semi --single-quote --trailing-comma none --print-width 160"
   },
   "jest": {
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "jsx"
     ],
     "moduleNameMapper": {
       "^@/(.+)": "<rootDir>/resource/apps/$1"
@@ -169,7 +170,7 @@
       }
     },
     "testMatch": [
-      "**/resource/tests/**/*.test.+(ts|tsx|js)"
+      "**/resource/tests/**/*.test.+(ts|tsx|js|jsx)"
     ]
   },
   "scripts": {
