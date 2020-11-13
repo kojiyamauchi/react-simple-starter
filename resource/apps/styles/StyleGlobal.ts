@@ -93,7 +93,6 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    padding: 50px 0 20px;
     overflow-x: hidden;
     font-family: ${GLOBAL_FONT};
     line-height: 1;
