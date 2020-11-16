@@ -24,7 +24,10 @@ const StyledComponent = styled(AppComponent)`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 50px 0 20px;
+
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
 `
 
 export const App = StyledComponent

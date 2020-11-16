@@ -168,7 +168,7 @@ module.exports = {
         { charset: 'UTF-8' },
         { 'http-equiv': 'content-language', content: 'ja' },
         { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-        { viewport: 'width=device-width, initial-scale=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       templateContent: ({ htmlWebpackPlugin }) => `<html lang="ja"><title>${htmlWebpackPlugin.options.title}</title><body><div id="app"></div></body></html>`
     })
