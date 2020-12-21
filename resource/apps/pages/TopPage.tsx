@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-const TopPageComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const TopPageComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <PageHeading letter="Top" className="primary-page page-heading" />
   </div>

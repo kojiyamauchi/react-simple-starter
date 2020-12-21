@@ -12,7 +12,7 @@ type Props = {
   className?: string
 }
 
-const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
+const HeaderContainerComponent: React.VFC<Props> = ({ className }): JSX.Element => {
   const nav = [
     { path: '/react-simple-starter/', letter: 'Top Page', id: 1 },
     { path: '/react-simple-starter/second', letter: 'Second Page', id: 2 },

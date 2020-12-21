@@ -10,7 +10,7 @@ type Props = {
   letter: string
 }
 
-const PageHeadingComponent: React.FC<Props> = ({ className, letter }): JSX.Element => (
+const PageHeadingComponent: React.VFC<Props> = ({ className, letter }): JSX.Element => (
   <div className={className}>
     <h2 className={className}>This is {letter} Page.</h2>
   </div>
