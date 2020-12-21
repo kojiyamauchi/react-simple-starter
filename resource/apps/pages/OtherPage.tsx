@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-const OtherPageComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const OtherPageComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <PageHeading letter="Other" className="fourth-page page-heading" />
   </div>

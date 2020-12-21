@@ -8,7 +8,7 @@ type Props = {
   className?: string
 }
 
-const GlobalHeadingComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const GlobalHeadingComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <h1>React Simple Starter Kit</h1>
   </div>

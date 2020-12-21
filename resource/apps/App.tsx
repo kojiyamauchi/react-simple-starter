@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-const AppComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const AppComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <HeaderContainer />
     <Router />

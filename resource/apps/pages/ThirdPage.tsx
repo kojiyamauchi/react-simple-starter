@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-const ThirdPageComponent: React.FC<Props> = ({ className }): JSX.Element => (
+const ThirdPageComponent: React.VFC<Props> = ({ className }): JSX.Element => (
   <div className={className}>
     <PageHeading letter="Third" className="third-page page-heading" />
   </div>

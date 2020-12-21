@@ -8,7 +8,7 @@ import { SecondPage } from '@/pages/SecondPage'
 import { ThirdPage } from '@/pages/ThirdPage'
 import { OtherPage } from '@/pages/OtherPage'
 
-const RouterComponent: React.FC = (): JSX.Element => (
+const RouterComponent: React.VFC = (): JSX.Element => (
   <Switch>
     <Route exact path="/react-simple-starter/" component={TopPage} />
     <Route exact path="/react-simple-starter/second" component={SecondPage} />
