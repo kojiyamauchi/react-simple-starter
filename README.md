@@ -89,6 +89,10 @@ When Development with Multiple People, Use `yarn upgrade`
   So,
   > will not add type-only files (files that contains only interfaces and/or types) to the webpack dependencies set. Webpack watches only files that are in the dependencies set. This means that changes in type-only files will not trigger new compilation.  
   > -> <https://www.npmjs.com/package/fork-ts-checker-webpack-plugin#type-only-modules-watching>
+- Styled Component's `GlobalStyle` is Not Minified at Build Time.  
+  It Seems JS's Tagged Template Literals are Difficult to Minify Due to Their Specification.
+  - <https://github.com/terser/terser/issues/129>
+  - <http://var.blog.jp/archives/79716639.html>
 - @types/styled-components When Install Latest Version, @types/react-native's Installed Together.  
   Temporary -> Add `.yarnclean` Ignoring `@types/react-native`
   - <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311>
