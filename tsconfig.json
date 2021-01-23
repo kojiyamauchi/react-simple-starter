@@ -29,14 +29,12 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "outDir": "./delivery/js",
-    "paths": { "@/*": [ "./resource/apps/*" ] }
+    "paths": { "@/*": [ "./resource/*" ], "~/*": [ "./*" ]}
 
   },
   "include": [
-    "resource/base/**/*",
-    "resource/apps/**/*",
-    "resource/types/**/*",
-    "resource/tests/**/*"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"

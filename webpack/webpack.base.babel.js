@@ -4,21 +4,51 @@
 
 import webpack from 'webpack'
 import path from 'path'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import ForkTsChecker from 'fork-ts-checker-webpack-plugin'
 import WebpackBuildNotifierPlugin from 'webpack-build-notifier'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+const ecmaFileNames = process.argv.includes('production') ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
 // Setting.
 module.exports = {
+  // New!! Necessary for HMR.
+  target: 'web',
   // Entry Point.
-  entry: path.resolve(__dirname, '../resource/base/core.tsx'),
+  entry: {
+    core: path.resolve(__dirname, '../resource/Core.tsx')
+  },
   // Output Point.
   output: {
-    path: path.resolve(__dirname, '../delivery/'),
-    filename: path.join('js', 'core.min.js'),
-    assetModuleFilename: 'materials/images/[hash][ext][query]'
-    // publicPath: '/' // Setting Root of Top Dir. Unnecessary Maybe...
+    path: path.resolve(__dirname, '../delivery'),
+    filename: path.join('js', ecmaFileNames),
+    assetModuleFilename: 'materials/images/[hash][ext][query]',
+    publicPath: process.env.npm_package_config_path_prefix || '/'
   },
+  // Spilt Chunks.
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        common: {
+          test: /node_modules\/(?!(react|react-dom|react-router|react-router-dom)\/).*/,
+          name: 'common.modules.bundle',
+          enforce: true,
+          chunks(chunk) {
+            return chunk.name
+          }
+        },
+        react: {
+          test: /node_modules\/react|react-dom|react-router|react-router-dom\//,
+          name: 'react.modules.bundle',
+          enforce: true,
+          chunks(chunk) {
+            return chunk.name
+          }
+        }
+      }
+    }
+  },
+
   module: {
     rules: [
       // ES Lint.
@@ -32,24 +62,52 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['cache-loader', 'thread-loader', 'babel-loader?cacheDirectory']
+        use: [
+          'cache-loader',
+          'thread-loader',
+          {
+            loader: 'babel-loader?cacheDirectory',
+            options: {
+              plugins: [require.resolve('react-refresh/babel')]
+            }
+          }
+        ]
       },
       // TS & TSX.
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['cache-loader', 'thread-loader', 'babel-loader?cacheDirectory', { loader: 'ts-loader', options: { happyPackMode: true } }]
+        use: [
+          'cache-loader',
+          'thread-loader',
+          'babel-loader?cacheDirectory',
+          {
+            loader: 'ts-loader',
+            options: {
+              happyPackMode: true
+            }
+          }
+        ]
       },
       // Styled Components.
       {
         enforce: 'pre',
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['cache-loader', 'thread-loader', { loader: 'stylelint-custom-processor-loader', options: { emitWarning: true } }]
+        use: [
+          'cache-loader',
+          'thread-loader',
+          {
+            loader: 'stylelint-custom-processor-loader',
+            options: {
+              emitWarning: true
+            }
+          }
+        ]
       },
       // For Images.
       {
-        test: /\.(jpg|png|gif|svg)$/,
+        test: /\.(webp|jpg|png|gif|svg)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
@@ -109,19 +167,6 @@ module.exports = {
           filename: 'materials/fonts/[hash][ext][query]'
         }
       },
-      // For PDF.
-      {
-        test: /\.pdf$/,
-        type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 10 * 1024
-          }
-        },
-        generator: {
-          filename: 'materials/pdf/[hash][ext][query]'
-        }
-      },
       // For JSON (Into Bundle File).
       {
         type: 'javascript/auto',
@@ -139,15 +184,17 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.svg', '.jpg', '.png', '.gif'],
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json', '.webp', '.svg', '.jpg', '.png', '.gif'],
 
     alias: {
-      '@': path.resolve(__dirname, '../resource/apps/'),
-      'react-dom': '@hot-loader/react-dom'
+      '@': path.resolve(__dirname, '../resource/'),
+      '~': path.resolve(__dirname, '../')
     }
   },
 
   plugins: [
+    // New!!
+    new ReactRefreshWebpackPlugin(),
     // using 'happyPackMode' on ts-loader option. (transpileOnly is true)
     // for that, use this plugin.(for type check)
     new ForkTsChecker({
@@ -163,14 +210,7 @@ module.exports = {
     // Generate HTML for Endpoint.
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      title: 'React Simple Starter.',
-      meta: [
-        { charset: 'UTF-8' },
-        { 'http-equiv': 'content-language', content: 'ja' },
-        { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-      ],
-      templateContent: ({ htmlWebpackPlugin }) => `<html lang="ja"><title>${htmlWebpackPlugin.options.title}</title><body><div id="app"></div></body></html>`
+      templateContent: `<html lang="ja"><body><div id="app"></div></body></html>`
     })
   ],
   // Setting for Warning on Terminal.
