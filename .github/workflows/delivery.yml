@@ -17,7 +17,7 @@ env:
   ENDPOINT_GITHUB_PAGES: # When Using GitHub Pages, Add Endpoint.
   ENDPOINT_NETLIFY: # When Using Netlify, Add Endpoint.
   ENDPOINT_FTP: # When Using FTP, Add Endpoint.
-  ENDPOINT_REDIRECT: # When Create SPA, Match Either GitHub Pages, Netlify or FTP.
+  ENDPOINT_REDIRECT: # When Create SPA & Deploy on GitHub Pages, Add GitHub Pages Endpoint.
 
 jobs:
   delivery:

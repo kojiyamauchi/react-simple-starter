@@ -8,7 +8,7 @@ env:
   LAUNCH_BUILD: on # Launch Build. [ on, off ]
   LAUNCH_DEPLOY: on # Launch Deployment. [ on, off ]
   ENDPOINT_GITHUB_PAGES: https://kojiyamauchi.github.io/react-simple-starter # When Using GitHub Pages, Add Endpoint.
-  ENDPOINT_REDIRECT: https://kojiyamauchi.github.io/react-simple-starter # When Create SPA, Match Either GitHub Pages, Netlify or FTP.
+  ENDPOINT_REDIRECT: https://kojiyamauchi.github.io/react-simple-starter # When Create SPA & Deploy on GitHub Pages, Add GitHub Pages Endpoint.
 
 jobs:
   preview:
