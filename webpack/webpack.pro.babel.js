@@ -12,7 +12,7 @@ import TerserPlugin from 'terser-webpack-plugin'
 
 // For Build on GitHub Pages.
 const generateRedirect =
-  process.env['GITHUB_ACTIONS'] && process.env['DEPLOY_TYPE'] === 'github-pages' && process.env['ENDPOINT_REDIRECT']
+  process.env['GITHUB_ACTIONS'] && process.env['ENDPOINT_REDIRECT']
     ? [
         new HtmlWebpackPlugin({
           filename: '404.html',
@@ -72,10 +72,6 @@ export default merge(webpackBase, {
           compress: {
             // Delete console.log(), When Minify of JS File.
             drop_console: true
-          },
-          output: {
-            // Keep Advanced License Comment Out.
-            comments: /^\**!|@preserve|@license|@cc_on/
           }
         }
       })
