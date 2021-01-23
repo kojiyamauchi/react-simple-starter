@@ -3,9 +3,9 @@
 */
 
 import webpack from 'webpack'
+import path from 'path'
 import { merge } from 'webpack-merge'
 import webpackBase from './webpack.base.babel'
-import path from 'path'
 
 export default merge(webpackBase, {
   /*
@@ -23,17 +23,29 @@ export default merge(webpackBase, {
   devtool: 'inline-source-map',
   // For Webpack Dev Sever.
   devServer: {
-    port: 3000, // Setting Port.
-    https: true, // SSL.
-    open: 'google chrome canary', // Default Browser.
-    progress: true, // Displayed Progress of Conversion on Terminal.
-    clientLogLevel: 'info', // Created Log Level.
-    contentBase: path.resolve(__dirname, '../delivery/'), // This API's Necessary When Using 'webpack dev server' on Root of index.html.
-    // publicPath: '/', // Setting Root on 'webpack dev server'. Unnecessary Maybe...
-    // watchContentBase: true, // Watching for Static Files in Delivery Dir. ( Styles || Templates || etc... )
-    historyApiFallback: true, // When Using the HTML5 History API, The index.html Page Will Likely Have to be Served in Place of Any 404 Responses. Enable This by Passing.
+    // Setting Port.
+    port: 3000,
+    // SSL.
+    https: true,
+    // This API's Necessary When Using 'webpack dev server' on Root of index.html.
+    contentBase: path.resolve(__dirname, '../delivery/'),
+    // Setting Root on 'webpack dev server'.
+    publicPath: process.env.npm_package_config_path_prefix || '/',
+    // Default Browser.
+    open: 'google chrome canary',
+    // Set Open Page Path.
+    openPage: process.env.npm_package_config_path_prefix ? process.env.npm_package_config_path_prefix.replace('/', '') : undefined,
+    // When Using the HTML5 History API, The index.html Page Will Likely Have to be Served in Place of Any 404 Responses. Enable This by Passing.
+    historyApiFallback: process.env.npm_package_config_path_prefix ? { index: process.env.npm_package_config_path_prefix } : true,
+    // Displayed Progress of Conversion on Terminal.
+    progress: true,
+    // Created Log Level.
+    clientLogLevel: 'info',
+    // Watching for Static Files in Delivery Dir. ( Styles || Templates || etc... )
+    // watchContentBase: true,
     watchOptions: {
-      poll: true // Using When File Update is Not Detected Correctly.
+      // Using When File Update is Not Detected Correctly.
+      poll: true
     }
   }
 })
