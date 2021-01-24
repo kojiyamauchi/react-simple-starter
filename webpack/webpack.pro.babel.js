@@ -10,7 +10,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 
-// For Build on GitHub Pages.
+// For Build on GitHub Pages. ( Reload Measures.)
 const generateRedirect =
   process.env['GITHUB_ACTIONS'] && process.env['ENDPOINT_REDIRECT']
     ? [
@@ -22,7 +22,7 @@ const generateRedirect =
       ]
     : []
 
-// For Build on Apache Server.
+// For Build on Apache Server. ( Reload Measures.)
 const forApache =
   process.env['DEPLOY_TYPE'] === 'ftp'
     ? [
@@ -44,7 +44,6 @@ export default merge(webpackBase, {
     the code can be analyzed in detail and the parts
     that are likely to be commonly compressed are compressed more positively */
     new webpack.optimize.AggressiveMergingPlugin(),
-    // When Build & Deploy on GitHub Actions, Generate 404.html
     ...generateRedirect,
     ...forApache,
     new CopyWebpackPlugin({
