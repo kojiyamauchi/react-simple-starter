@@ -39,7 +39,7 @@ module.exports = {
         },
         react: {
           test: /node_modules\/react|react-dom|react-router|react-router-dom\//,
-          name: 'react.modules.bundle',
+          name: 'react.core.bundle',
           enforce: true,
           chunks(chunk) {
             return chunk.name
