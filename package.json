@@ -139,11 +139,6 @@
       ]
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --allow-empty"
-    }
-  },
   "lint-staged": {
     "resource/**/*.{ts,tsx,js,jsx}": [
       "prettier --write",
@@ -186,6 +181,7 @@
   },
   "scripts": {
     "setup": "rm -rf .git",
+    "prepare": "husky install",
     "webp": "node webp.js",
     "watch:webp": "chokidar 'resource/apps/materials/toWebps/*.{jpg,png}' -c 'yarn webp'",
     "start:dev": "webpack serve --inline --hot --config webpack/webpack.dev.babel.js --mode development",
@@ -195,7 +191,7 @@
     "clean": "rimraf delivery/* && touch delivery/.gitkeep",
     "jest": "jest --passWithNoTests",
     "check-pkg": "ncu",
-    "update-pkg": "ncu '/^(?!(husky|@add-module-name)).*$/' -u",
+    "update-pkg": "ncu '/^(?!(add-module-name|@add-module-name)).*$/' -u",
     "re-install": "rm yarn.lock && rm -rf node_modules && yarn install"
   }
 }
