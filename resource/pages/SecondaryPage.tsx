@@ -3,8 +3,8 @@
 */
 
 import { useLocation } from 'react-router-dom'
-import { Layout } from '@/components/Layout'
-import { SEO } from '@/components/Seo'
+import { Layout } from '@/components/Layout/'
+import { SEO } from '@/components/Seo/'
 import { PageHeading } from '@/components/Presentations/PageHeading'
 import styled from 'styled-components'
 import { PagesStyle } from '@/styles/StyleMixins'
@@ -17,7 +17,7 @@ const SecondaryPageComponent: React.VFC<Props> = ({ className }): JSX.Element =>
   const location = useLocation()
 
   return (
-    <Layout pages="secondary" fixedLayout={true}>
+    <Layout pages="secondary" chooseLayout="fixedLayout">
       <SEO title="Secondary Page" description="This is Secondary Page" locationPath={location.pathname} />
       <div className={className}>
         <PageHeading letter="Secondary" className="secondary-page page-heading" />
