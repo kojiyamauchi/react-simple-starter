@@ -1,0 +1,35 @@
+/*
+  Fixed Layout.
+*/
+
+import { HeaderContainer } from '@/components/Managements/HeaderContainer'
+import { Footer } from '@/components/Presentations/Footer'
+import styled from 'styled-components'
+
+type Props = {
+  className?: string
+  pages: string
+}
+
+const FixedLayoutComponent: React.FC<Props> = ({ className, pages, children }): JSX.Element => {
+  return (
+    <div className={`${className} ${pages} layout fixed-layout`}>
+      <HeaderContainer />
+      {children}
+      <Footer />
+    </div>
+  )
+}
+
+const StyledComponent = styled(FixedLayoutComponent)`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+`
+
+export const FixedLayout = StyledComponent
