@@ -10,11 +10,11 @@ type Props = {
 }
 
 const FooterComponent: React.VFC<Props> = ({ className }): JSX.Element => (
-  <div className={className}>
+  <footer className={className}>
     <a href="http://kojiyamauchi.com" className="link-letter" target="_blank" rel="noreferrer">
       © {new Date().getFullYear()} All The Small Things, All Rights Reserved.
     </a>
-  </div>
+  </footer>
 )
 
 const StyledComponent = styled(FooterComponent)`
