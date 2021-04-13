@@ -4,6 +4,7 @@
 
 import { createGlobalStyle } from 'styled-components'
 import { GLOBAL_FONT, GLOBAL_COLOR } from '@/styles/StyleConstants'
+import Logo from '@/materials/images/logo.webp'
 
 export const GlobalStyle = createGlobalStyle`
   a,
@@ -204,5 +205,18 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: 25% auto;
+    background-position: 80% center;
+    background-image: url(${Logo});
   }
 `

@@ -5,7 +5,6 @@
 import { css } from 'styled-components'
 import { BREAK_POINT_WIDTH } from '@/styles/StyleConstants'
 import { BreakPointWidthMember, BreakPointMember } from '@/types/type'
-import Logo from '@/materials/images/logo.webp'
 
 // Break Point.
 /*
@@ -27,16 +26,3 @@ export const BreakPoint = Object.keys(BREAK_POINT_WIDTH).reduce((accumulator, cu
   `
   return accumulator
 }, {} as BreakPointMember)
-
-export const PagesStyle = css`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-repeat: no-repeat;
-  background-size: 25% auto;
-  background-position: 80% center;
-  background-image: url(${Logo});
-`
