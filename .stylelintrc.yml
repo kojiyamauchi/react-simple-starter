@@ -1,7 +1,7 @@
 syntax: scss
-processors: stylelint-processor-styled-components
 extends:
-  - stylelint-config-standard
+  - stylelint-config-recommended-scss
+  - stylelint-config-recess-order
   - stylelint-config-styled-components
 rules:
   indentation:
@@ -19,10 +19,9 @@ rules:
   value-no-vendor-prefix:
     - true
     - ignoreValues:
-      - grid
-      - fill-available
+        - grid
+        - fill-available
   value-keyword-case:
     - lower
     - ignoreKeywords: dummyValue
   selector-pseudo-element-colon-notation: single
-
