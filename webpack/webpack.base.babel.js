@@ -64,7 +64,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'cache-loader',
-          // 'thread-loader',
+          'thread-loader',
           {
             loader: 'babel-loader?cacheDirectory',
             options: {
@@ -79,7 +79,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'cache-loader',
-          // 'thread-loader',
+          'thread-loader',
           'babel-loader?cacheDirectory',
           {
             loader: 'ts-loader',
@@ -96,7 +96,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'cache-loader',
-          // 'thread-loader',
+          'thread-loader',
           {
             loader: 'stylelint-custom-processor-loader',
             options: {
