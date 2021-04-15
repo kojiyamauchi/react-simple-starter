@@ -55,7 +55,7 @@ jobs:
           stylelint_input: 'resource/**/*.{ts,tsx,js,jsx}'
       - name: Displayed stylelint Failure on Checks
         if: env.LAUNCH_STYLELINT == 'on'
-        run: yarn stylelint 'resource/**/*.{ts,tsx,js,jsx}'
+        run: yarn stylelint --fix 'resource/**/*.{ts,tsx,js,jsx}'
 
   build-test:
     name: Build Test for Preview
