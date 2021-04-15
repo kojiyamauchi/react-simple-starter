@@ -22,10 +22,10 @@ const FixedLayoutComponent: React.FC<Props> = ({ className, pages, children }): 
 }
 
 const StyledComponent = styled(FixedLayoutComponent)`
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
 
   @supports (-webkit-touch-callout: none) {
     min-height: -webkit-fill-available;

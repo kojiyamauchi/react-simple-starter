@@ -18,11 +18,11 @@ const FooterComponent: React.VFC<Props> = ({ className }): JSX.Element => (
 )
 
 const StyledComponent = styled(FooterComponent)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 0 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .link-letter {
     font-family: Lobster, cursive;

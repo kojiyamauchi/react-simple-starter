@@ -20,12 +20,12 @@ const HeaderContainerComponent: React.VFC<Props> = ({ className }): JSX.Element 
 }
 
 const StyledComponent = styled(HeaderContainerComponent)`
-  width: 100%;
-  flex-direction: column;
-  padding: 50px 0 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0 0;
 `
 
 export const HeaderContainer = StyledComponent

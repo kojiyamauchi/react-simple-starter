@@ -208,15 +208,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     flex: 1;
-    background-repeat: no-repeat;
-    background-size: 25% auto;
-    background-position: 80% center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     background-image: url(${Logo});
+    background-repeat: no-repeat;
+    background-position: 80% center;
+    background-size: 25% auto;
   }
 `

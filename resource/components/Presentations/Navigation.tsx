@@ -35,12 +35,12 @@ const NavigationComponent: React.VFC<Props> = ({ className }): JSX.Element => {
 }
 
 const StyledComponent = styled(NavigationComponent)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   ${BreakPoint.largeMobile` width: 60%; `}
   ${BreakPoint.largeMobile` padding: 0; `}
 
