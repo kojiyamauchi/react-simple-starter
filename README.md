@@ -96,10 +96,5 @@ When Development with Multiple People, Use `yarn upgrade`
 - @types/styled-components When Install Latest Version, @types/react-native's Installed Together.  
   Temporary -> Add `.yarnclean` Ignoring `@types/react-native`
   - <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311>
-- Styled Components Autofix Stylelint Doesn't Work Yet.  
-  Maybe Auto Fix of Stylelint Doesn't Work in Template Literals.  
-  So, Display Only Warning on the Terminal.
-  - <https://github.com/styled-components/stylelint-processor-styled-components/issues/264>
-  - <https://github.com/stylelint/stylelint/blob/master/CHANGELOG.md#9100>
 
 <h2 align="center">☕️</h2>
