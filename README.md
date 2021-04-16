@@ -96,5 +96,7 @@ When Development with Multiple People, Use `yarn upgrade`
 - @types/styled-components When Install Latest Version, @types/react-native's Installed Together.  
   Temporary -> Add `.yarnclean` Ignoring `@types/react-native`
   - <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311>
+- styled-components && stylelint && stylelint-config-recess-order.
+  - Using placeholder, Sometimes the auto-fix doesn't work. 😵
 
 <h2 align="center">☕️</h2>
