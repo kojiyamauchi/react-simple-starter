@@ -1,7 +1,7 @@
 const imagemin = require('imagemin')
 const webp = require('imagemin-webp')
-const inDir = 'resource/apps/materials/toWebps/*.{png,jpg,jpeg,gif}'
-const outDir = 'resource/apps/materials/images/'
+const inDir = 'resource/materials/toWebps/*.{png,jpg,jpeg,gif}'
+const outDir = 'resource/materials/images/'
 
 ;(async () => {
   const dataObjArr = await imagemin([inDir], {
