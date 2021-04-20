@@ -9,7 +9,8 @@ import ForkTsChecker from 'fork-ts-checker-webpack-plugin'
 import WebpackBuildNotifierPlugin from 'webpack-build-notifier'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const ecmaFileNames = process.argv.includes('production') ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
+const webpackModeProduction = process.argv.includes('production')
+const ecmaFileNames = webpackModeProduction ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
 // Setting.
 module.exports = {
   // New!! Necessary for HMR.
@@ -193,6 +194,9 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      webpackModeProduction: JSON.stringify(webpackModeProduction)
+    }),
     // New!!
     new ReactRefreshWebpackPlugin(),
     // using 'happyPackMode' on ts-loader option. (transpileOnly is true)

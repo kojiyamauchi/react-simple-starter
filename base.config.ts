@@ -19,3 +19,5 @@ export const pathPrefix = (): string => {
   }
   return config.enable ? config.subDir : ''
 }
+
+export const branchesMode = webpackModeProduction ? '🛹' : '🏄‍♂️'
