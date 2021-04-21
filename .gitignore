@@ -4,3 +4,4 @@ node_modules/
 .DS_Store
 delivery/*
 !delivery/.gitkeep
+resource/materials/images/*.webp
