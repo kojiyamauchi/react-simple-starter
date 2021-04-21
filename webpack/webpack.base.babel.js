@@ -194,9 +194,8 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      webpackModeProduction: JSON.stringify(webpackModeProduction)
-    }),
+    // Just in case, Do not use JSON.stringify(), -> Even when using this, compile result will be !0 or !1
+    new webpack.DefinePlugin({ webpackModeProduction: webpackModeProduction }),
     // New!!
     new ReactRefreshWebpackPlugin(),
     // using 'happyPackMode' on ts-loader option. (transpileOnly is true)
