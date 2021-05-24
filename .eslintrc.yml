@@ -19,6 +19,8 @@ plugins:
   - jest
   - react
   - react-hooks
+  - testing-library
+  - jest-dom
 settings:
   # Import webpack Alias Setting, Linting for 'import/no-unresolved'.
   'import/resolver':
@@ -41,6 +43,8 @@ extends:
   - 'eslint:recommended'
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:react/recommended'
+  - 'plugin:testing-library/react'
+  - 'plugin:jest-dom/recommended'
   - 'prettier'
 rules:
   indent: off
