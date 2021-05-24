@@ -4,6 +4,7 @@ React Simple Starter.
 </h1>
 
 <p align="center"><a href="https://kojiyamauchi.github.io/react-simple-starter/">https://kojiyamauchi.github.io/react-simple-starter</a></p>
+<p align="center"><a href="https://kojiyamauchi.github.io/react-simple-starter/storybook/">https://kojiyamauchi.github.io/react-simple-starter/storybook</a></p>
 
 ## 🧉 Usage.
 

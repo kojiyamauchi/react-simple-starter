@@ -3,7 +3,7 @@
 */
 
 import { useLocation } from 'react-router-dom'
-import { Layout } from '@/components/Layout/'
+import { Layout } from '@/components/Layouts'
 import { SEO } from '@/components/Seo/'
 import { PageHeading } from '@/components/Presentations/PageHeading'
 
@@ -13,9 +13,7 @@ export const PrimaryPage: React.VFC = (): JSX.Element => {
   return (
     <Layout pages="primary" chooseLayout="fixedLayout">
       <SEO locationPath={location.pathname} />
-      <main>
-        <PageHeading letter="Primary" className="primary-page page-heading" />
-      </main>
+      <PageHeading letter="Primary" translation={true} className="primary-page page-heading" />
     </Layout>
   )
 }

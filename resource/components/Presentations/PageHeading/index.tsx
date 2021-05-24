@@ -1,5 +1,5 @@
 /*
-  Page Heading.
+  PageHeading Component.
 */
 
 import styled from 'styled-components'
@@ -8,6 +8,7 @@ import { BreakPoint } from '@/styles/StyleMixins'
 type Props = {
   className?: string
   letter: string
+  translation?: boolean
 }
 
 const PageHeadingComponent: React.VFC<Props> = ({ className, letter }): JSX.Element => (
@@ -17,7 +18,7 @@ const PageHeadingComponent: React.VFC<Props> = ({ className, letter }): JSX.Elem
 const StyledComponent = styled(PageHeadingComponent)`
   font-size: 3em;
   text-align: center;
-  transform: translateY(-100%);
+  ${(props): string | undefined | false => props.translation && `transform: translateY(-100%);`}
   ${BreakPoint.largeMobile` font-size: 4.8em `}
 `
 

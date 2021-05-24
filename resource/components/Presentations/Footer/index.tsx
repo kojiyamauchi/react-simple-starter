@@ -1,5 +1,5 @@
 /*
-  Footer.
+  Footer Component.
 */
 
 import styled from 'styled-components'

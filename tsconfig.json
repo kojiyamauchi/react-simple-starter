@@ -26,7 +26,7 @@
     "noEmit": false,
     "emitDeclarationOnly": false,
     "isolatedModules": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "outDir": "./delivery/js",
     "paths": { "@/*": [ "./resource/*" ], "~/*": [ "./*" ]}

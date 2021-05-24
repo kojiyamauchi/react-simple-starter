@@ -6,14 +6,16 @@ import webpack from 'webpack'
 import path from 'path'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import ForkTsChecker from 'fork-ts-checker-webpack-plugin'
-import WebpackBuildNotifierPlugin from 'webpack-build-notifier'
+import ForkTsCheckerNotifierWebpackPlugin from 'fork-ts-checker-notifier-webpack-plugin'
+import ESLintPlugin from 'eslint-webpack-plugin'
+import WebpackNotifierPlugin from 'webpack-notifier'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const webpackModeProduction = process.argv.includes('production')
-const ecmaFileNames = webpackModeProduction ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
+const webpackEnvMode = process.argv.includes('production') ? 'production' : process.argv.includes('development') ? 'development' : null
+const ecmaFileNames = webpackEnvMode === 'production' ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
 // Setting.
-module.exports = {
-  // New!! Necessary for HMR.
+export default {
+  // Necessary for HMR.
   target: 'web',
   // Entry Point.
   entry: {
@@ -52,13 +54,6 @@ module.exports = {
 
   module: {
     rules: [
-      // ES Lint.
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: 'eslint-loader'
-      },
       // ECMA & React.
       {
         test: /\.(js|jsx)$/,
@@ -157,7 +152,7 @@ module.exports = {
       },
       // For Fonts.
       {
-        test: /\.(woff|woff2|eot|ttf)$/,
+        test: /\.(woff|woff2|eot|otf|ttf)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
@@ -194,9 +189,7 @@ module.exports = {
   },
 
   plugins: [
-    // Just in case, Do not use JSON.stringify(), -> Even when using this, compile result will be !0 or !1
-    new webpack.DefinePlugin({ webpackModeProduction: webpackModeProduction }),
-    // New!!
+    // HMR.
     new ReactRefreshWebpackPlugin(),
     // using 'happyPackMode' on ts-loader option. (transpileOnly is true)
     // for that, use this plugin.(for type check)
@@ -208,11 +201,18 @@ module.exports = {
         }
       }
     }),
-    // Notify Desktop When a Compile Error.
-    new WebpackBuildNotifierPlugin({ suppressSuccess: 'initial' }),
+    // Notify Desktop When a TypeScript Error.
+    new ForkTsCheckerNotifierWebpackPlugin({ title: 'TypeScript | Client' }),
+    // ESLint on webpack.
+    new ESLintPlugin({ files: [path.resolve(__dirname, '../resource/**/*.{ts,tsx,js,jsx}')], failOnWarning: true }),
+    // Notify Desktop When a ESLint or Webpack Build Error.
+    new WebpackNotifierPlugin({ title: 'ESLint or Webpack Build | Client' }),
+    // Use Env Variable on Client Side.
+    new webpack.DefinePlugin({ webpackEnvMode: JSON.stringify(webpackEnvMode) }),
     // Generate HTML for Endpoint.
     new HtmlWebpackPlugin({
       filename: 'index.html',
+      inject: 'body',
       templateContent: `<html lang="ja"><body><div id="app"></div></body></html>`
     })
   ],
