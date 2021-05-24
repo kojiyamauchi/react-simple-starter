@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Container Component Unit Test Snapshot Testing 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-dlnjwi eseKde"
+  >
+    <h1
+      class="sc-bdnxRM kSZPnN primary-heading"
+    >
+      React Simple Starter
+    </h1>
+    <ul
+      class="sc-gtsrHT bQjmdZ"
+    >
+      <li>
+        <a
+          class="link-letter"
+          href="/react-simple-starter/"
+        >
+          Primary Page
+        </a>
+      </li>
+      <li>
+        <a
+          class="link-letter"
+          href="/react-simple-starter/second"
+        >
+          Secondary Page
+        </a>
+      </li>
+      <li>
+        <a
+          class="link-letter"
+          href="/react-simple-starter/third"
+        >
+          Third Page
+        </a>
+      </li>
+      <li>
+        <a
+          class="link-letter"
+          href="/react-simple-starter/fourth"
+        >
+          Fourth Page
+        </a>
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;

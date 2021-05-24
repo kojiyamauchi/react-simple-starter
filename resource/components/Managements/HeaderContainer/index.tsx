@@ -1,5 +1,5 @@
 /*
-  Header Container.
+  Header Container Component.
 */
 
 import { GlobalHeading } from '@/components/Presentations/GlobalHeading'

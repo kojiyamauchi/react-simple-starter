@@ -2,8 +2,8 @@
   Layout
 */
 
-import { FixedLayout } from '@/components/Layout/FixedLayout'
-import { FluidLayout } from '@/components/Layout/FluidLayout'
+import { FixedLayout } from '@/components/Layouts/FixedLayout'
+import { FluidLayout } from '@/components/Layouts/FluidLayout'
 
 type Props = {
   pages: string

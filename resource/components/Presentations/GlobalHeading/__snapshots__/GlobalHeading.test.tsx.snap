@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalHeading Component Unit Test Snapshot Testing 1`] = `
+<DocumentFragment>
+  <h1
+    class="sc-bdnxRM kSZPnN primary-heading"
+  >
+    React Simple Starter
+  </h1>
+</DocumentFragment>
+`;
