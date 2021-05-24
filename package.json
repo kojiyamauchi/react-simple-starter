@@ -164,10 +164,11 @@
       "eslint --fix --max-warnings 0",
       "stylelint --fix"
     ],
-    "./*.{ts,js}": [
+    "./*.ts": [
       "prettier --write",
       "eslint --fix --max-warnings 0"
     ],
+    "./*.js": "prettier --write",
     "webpack/*.js": "prettier --write"
   },
   "jest": {
