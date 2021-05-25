@@ -116,6 +116,7 @@
     "thread-loader": "^3.0.4",
     "ts-jest": "^26.5.6",
     "ts-loader": "^9.2.2",
+    "ts-node": "^10.0.0",
     "typescript": "^4.2.4",
     "wait-on": "^5.3.0",
     "webpack": "^5.37.1",
@@ -123,83 +124,6 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
     "webpack-notifier": "^1.13.0"
-  },
-  "browserslist": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
-  ],
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "usage",
-          "modules": false,
-          "corejs": 3
-        }
-      ],
-      [
-        "@babel/preset-react",
-        {
-          "runtime": "automatic"
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/plugin-transform-modules-commonjs",
-      [
-        "babel-plugin-styled-components",
-        {
-          "ssr": true,
-          "displayName": true,
-          "transpileTemplateLiterals": true
-        }
-      ]
-    ]
-  },
-  "lint-staged": {
-    "resource/**/*.{ts,tsx,js,jsx}": [
-      "prettier --write",
-      "eslint --fix --max-warnings 0",
-      "stylelint --fix"
-    ],
-    "./*.ts": [
-      "prettier --write",
-      "eslint --fix --max-warnings 0"
-    ],
-    "./*.js": "prettier --write",
-    "webpack/*.js": "prettier --write"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx"
-    ],
-    "moduleNameMapper": {
-      "^@/(.+)": "<rootDir>/resource/$1",
-      "^~/(.+)": "<rootDir>/$1"
-    },
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest",
-      "\\.(webp|svg|png|jpg|jpeg|gif)$": "<rootDir>/jestFileTransformer.js"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/testingLibrary.config.ts"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json"
-      },
-      "webpackEnvMode": "test"
-    },
-    "testMatch": [
-      "**/resource/tests/**/*.test.+(ts|tsx|js|jsx)",
-      "**/resource/components/**/*.test.+(ts|tsx|js|jsx)",
-      "**/resource/hooks/**/*.test.+(ts|tsx|js|jsx)"
-    ]
   },
   "config": {
     "path": {
@@ -217,7 +141,7 @@
     "start:build": "webpack --config webpack/webpack.pro.babel.js --mode production",
     "build-storybook": "build-storybook -o delivery/storybook",
     "build": "npm-run-all -p webp start:build build-storybook",
-    "clean": "rimraf resource/materials/images/*.webp && rimraf delivery/* && rimraf storybook-static && touch delivery/.gitkeep",
+    "clean": "rimraf delivery/* && rimraf storybook-static && touch delivery/.gitkeep",
     "jest": "jest --passWithNoTests",
     "add:fc": "hygen add component",
     "add:page": "hygen add page",
