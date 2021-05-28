@@ -7,7 +7,7 @@ sh: "prettier --write 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `
 -%>
 <% if (chooseOutPutDir === 'Layouts') { %>
 /*
-  <%= Name %> Layout.
+  <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %> Layout.
 */
 
 import styled from 'styled-components'
@@ -62,7 +62,7 @@ export const <%= Name %>Layout = StyledComponent
   componentName = chooseOutPutDir === 'Managements' ? `${Name}Container` : Name
 %>
 /*
-  <%= Name %><%= chooseOutPutDir === 'Managements' ? ' Container ' : ' ' %>Component.
+  <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %><%= chooseOutPutDir === 'Managements' ? ' Container ' : ' ' %>Component.
 */
 
 <%- useHooks ? `import { use${h.changeCase.pascal(addHooksFnName)} } from './Hooks'` : '' %>

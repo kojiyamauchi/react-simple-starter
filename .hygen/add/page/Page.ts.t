@@ -2,12 +2,12 @@
 to: resource/Pages/<%= Name %>Page.tsx
 sh: prettier --write 'resource/Pages/<%= Name %>Page.tsx'
 ---
-/*
-  <%= Name %> Page.
-*/
 <%
   camelName = h.changeCase.camel(name)
 %>
+/*
+  <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %> Page.
+*/
 import { useLocation } from 'react-router-dom'
 import { Layout } from '@/components/Layouts/'
 import { SEO } from '@/components/Seo/'
