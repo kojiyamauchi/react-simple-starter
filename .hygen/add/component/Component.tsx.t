@@ -1,6 +1,6 @@
 ---
 to: "resource/components/<%= chooseOutPutDir === 'Layouts' ? `${chooseOutPutDir}/${Name}Layout/index.tsx` : chooseOutPutDir === 'Managements' ? `${chooseOutPutDir}/${Name}Container/index.tsx` : `${chooseOutPutDir}/${Name}/index.tsx` %>"
-sh: "prettier --write 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `${chooseOutPutDir}/${Name}Layout/index.tsx` : chooseOutPutDir === 'Managements' ? `${chooseOutPutDir}/${Name}Container/index.tsx` : `${chooseOutPutDir}/${Name}/index.tsx` %>'"
+sh: "ejslint 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `${chooseOutPutDir}/${Name}Layout/index.tsx` : chooseOutPutDir === 'Managements' ? `${chooseOutPutDir}/${Name}Container/index.tsx` : `${chooseOutPutDir}/${Name}/index.tsx` %>' && prettier --write 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `${chooseOutPutDir}/${Name}Layout/index.tsx` : chooseOutPutDir === 'Managements' ? `${chooseOutPutDir}/${Name}Container/index.tsx` : `${chooseOutPutDir}/${Name}/index.tsx` %>'"
 ---
 <%
   camelName = h.changeCase.camel(name)
@@ -75,7 +75,7 @@ type Props = {
   className?: string
   <% if (addPropsNumber > 0) { -%>
     <% Array.from({ length: addPropsNumber }, (_info, index) => { -%>
-      <%= h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`]) %>: <%= h.changeCase.camel(addPropsDetails[index][`addPropsType${index + 1}`]) %>
+      <%= h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`]) %>: <%- addPropsDetails[index][`addPropsType${index + 1}`] %>
     <% }) %>
   <% } %>
 }
@@ -91,14 +91,20 @@ const <%= componentName %>Component: React.<%= chooseComponentTypes === 'Functio
   }): JSX.Element => {
   <% if (useHooks) { %>
   const {
-    <% if (addHooksTypeAlias) { -%>
-      <% Array.from({ length: addHooksTypeNumber }, (_info, index) => { -%>
-        <%= `${h.changeCase.camel(addHooksTypeDetails[index][`addHooksTypeKey${index + 1}`])},` -%>
+    <% if (addHooksReturnTypeAlias) { -%>
+      <% Array.from({ length: addHooksReturnTypeNumber }, (_info, index) => { -%>
+        <%= `${h.changeCase.camel(addHooksReturnTypeDetails[index][`addHooksReturnTypeKey${index + 1}`])},` -%>
       <% }) -%>
   <% } else { -%>
   undefined
   <% } -%>
-  } = use<%= h.changeCase.pascal(addHooksFnName) %>()
+  } = use<%= h.changeCase.pascal(addHooksFnName) %>(
+    <% if (addHooksFnArgNumber > 0) { -%>
+      <% Array.from({ length: addHooksFnArgNumber }, (_info, index) => { -%>
+        <%= `${h.changeCase.camel(addHooksFnArgDetails[index][`addHooksFnArgName${index + 1}`])},` %>
+      <% }) -%>
+    <% } %>
+  )
   <% } %>
   return (
     <<%= wrapperTags %> className={className}>
