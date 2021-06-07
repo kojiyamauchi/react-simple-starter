@@ -2,7 +2,7 @@
   Header Container Component Storybook.
 */
 
-import { HeaderContainer } from './'
+import { HeaderContainer } from './Component'
 import { BrowserRouter } from 'react-router-dom'
 // import { action } from '@storybook/addon-actions'
 

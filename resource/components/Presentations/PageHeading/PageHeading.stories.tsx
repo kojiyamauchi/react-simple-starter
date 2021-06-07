@@ -2,7 +2,7 @@
   PageHeading Component Storybook.
 */
 
-import { PageHeading } from './'
+import { PageHeading } from './Component'
 // import { action } from '@storybook/addon-actions'
 
 export default {

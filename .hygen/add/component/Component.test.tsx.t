@@ -12,7 +12,7 @@ sh: "prettier --write 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `
   <%= Name.replace(/([a-z0-9])([A-Z])/g, '$1 $2') %><%= chooseOutPutDir === 'Layouts' ? ' Layout ' : chooseOutPutDir === 'Managements' ? ' Container ' : ' ' %>Component Unit Test.
 */
 
-import { <%= componentName %> } from './'
+import { <%= componentName %> } from './<%= chooseOutPutDir === 'Layouts' ? '' : 'Component' %>'
 <% if (useBrowserRouter) { -%>
 import { BrowserRouter } from 'react-router-dom'
 <% } -%>
