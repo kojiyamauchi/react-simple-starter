@@ -141,7 +141,7 @@
     "start:build": "webpack --config webpack/webpack.pro.babel.js --mode production",
     "build-storybook": "build-storybook -o delivery/storybook",
     "build": "npm-run-all -p webp start:build build-storybook",
-    "clean": "rimraf delivery/* && rimraf storybook-static && touch delivery/.gitkeep",
+    "clean": "rimraf delivery/* && touch delivery/.gitkeep",
     "jest": "jest --passWithNoTests",
     "add:fc": "hygen add component",
     "add:page": "hygen add page",
