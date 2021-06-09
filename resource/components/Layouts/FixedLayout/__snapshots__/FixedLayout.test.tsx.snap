@@ -3,10 +3,10 @@
 exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <div
-    class="sc-eCApnc gQSlmJ ui-test layout fixed-layout"
+    class="sc-eCApnc dMklzQ ui-test layout fixed-layout"
   >
     <header
-      class="sc-dlnjwi eseKde"
+      class="sc-dlnjwi hZXVPZ"
     >
       <h1
         class="sc-bdnxRM kSZPnN primary-heading"
@@ -54,7 +54,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
       class="main-content"
     />
     <footer
-      class="sc-hKFxyN cPdexJ"
+      class="sc-hKFxyN iHOwMh"
     >
       <a
         class="link-letter"

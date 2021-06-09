@@ -25,7 +25,6 @@ const StyledComponent = styled(HeaderContainerComponent)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 50px 0 0;
 `
 
 export const HeaderContainer = StyledComponent

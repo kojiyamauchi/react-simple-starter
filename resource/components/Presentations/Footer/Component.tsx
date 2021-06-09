@@ -22,7 +22,6 @@ const StyledComponent = styled(FooterComponent)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 0 20px;
 
   .link-letter {
     font-family: Lobster, cursive;
