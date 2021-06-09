@@ -1,5 +1,6 @@
 import { addDecorator } from '@storybook/react'
 import { GlobalStyle } from '@/styles/StyleGlobal'
+import { StorybookStyle } from '@/styles/StyleStorybook'
 
 addDecorator((story) => (
   <>
@@ -8,6 +9,7 @@ addDecorator((story) => (
       rel="stylesheet"
     />
     <GlobalStyle />
+    <StorybookStyle />
     {story()}
   </>
 ))
