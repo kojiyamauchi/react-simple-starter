@@ -16,7 +16,7 @@ sh: "<%= chooseOutPutDir === 'Layouts' ? null  : chooseOutPutDir === 'Management
 <%- useHooks ? `import { use${h.changeCase.pascal(addHooksFnName)} } from './Hooks'` : '' %>
 import styled from 'styled-components'
 <% if (useBreakPoints) { -%>
-import { BreakPoint } from '@/styles/StyleMixins'
+import { breakPoint } from '@/styles/StyleMixins'
 <% } %>
 
 type Props = {
@@ -70,7 +70,7 @@ const <%= componentName %>Component: React.<%= chooseComponentTypes === 'Functio
 
 const StyledComponent = styled(<%= componentName %>Component)`
 <% if (useBreakPoints) {%>
-  ${BreakPoint.largeMobile``}
+  ${breakPoint.aboveLargeMobile``}
 <% } %>
 `
 
