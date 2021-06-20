@@ -3,7 +3,7 @@
 exports[`PageHeading Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <h2
-    class="sc-bdnxRM pbnCN secondary-heading"
+    class="sc-bdnxRM eCtsRw secondary-heading"
   >
     This is  Page.
   </h2>
