@@ -4,7 +4,7 @@
 
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { BreakPoint } from '@/styles/StyleMixins'
+import { breakPoint } from '@/styles/StyleMixins'
 import { pathPrefix } from '~/base.config'
 
 type Props = {
@@ -39,14 +39,14 @@ const StyledComponent = styled(NavigationComponent)`
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  ${BreakPoint.largeMobile` width: 60%; `}
-  ${BreakPoint.largeMobile` padding: 0; `}
+  ${breakPoint.aboveLargeMobile` width: 60%; `}
+  ${breakPoint.aboveLargeMobile` padding: 0; `}
 
   .link-letter {
     font-size: 1.375em;
     font-weight: 300;
     text-align: center;
-    ${BreakPoint.largeMobile` font-size: 2.2em `}
+    ${breakPoint.aboveLargeMobile` font-size: 2.2em `}
   }
 `
 

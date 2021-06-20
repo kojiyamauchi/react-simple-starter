@@ -2,7 +2,7 @@
   Global Heading Component.
 */
 import styled from 'styled-components'
-import { BreakPoint } from '@/styles/StyleMixins'
+import { breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
@@ -16,7 +16,7 @@ const StyledComponent = styled(GlobalHeadingComponent)`
   font-size: 3em;
   font-weight: 300;
   text-align: center;
-  ${BreakPoint.largeMobile` font-size: 5.6em `}
+  ${breakPoint.aboveLargeMobile` font-size: 5.6em `}
 `
 
 export const GlobalHeading = StyledComponent
