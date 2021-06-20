@@ -3,26 +3,27 @@
 */
 
 import { css } from 'styled-components'
-import { BREAK_POINT_WIDTH } from '@/styles/StyleConstants'
-import { BreakPointWidthMember, BreakPointMember } from '@/types/type'
+import { BREAK_POINT } from '@/styles/StyleConstants'
+import { BreakPointValueMember, BreakPointMember } from '@/types/type'
 
 // Break Point.
 /*
 Usage.
-Small Mobile.  => ${BreakPoint.smallMobile` Add CSS Property `}
-Mobile.        => ${BreakPoint.mobile` Add CSS Property `}
-Large Mobile.  => ${BreakPoint.largeMobile` Add CSS Property `}
-Tablet.        => ${BreakPoint.tablet` Add CSS Property `}
-Desktop.       => ${BreakPoint.desktop` Add CSS Property `}
-Large Desktop. => ${BreakPoint.largeDesktop` Add CSS Property `}
-Extra Large Desktop. => ${BreakPoint.extraLargeDesktop` Add CSS Property `}
+Above Small Mobile.  => ${breakPoint.aboveSmallMobile` Add CSS Property `}
+Above Middle Mobile. => ${breakPoint.aboveMiddleMobile` Add CSS Property `}
+Above Large Mobile.  => ${breakPoint.aboveLargeMobile` Add CSS Property `}
+Above Tablet.        => ${breakPoint.aboveTablet` Add CSS Property `}
+Above Laptop.        => ${breakPoint.aboveLaptop` Add CSS Property `}
+Just Desktop.        => ${breakPoint.justDesktop` Add CSS Property `}
 */
-export const BreakPoint = Object.keys(BREAK_POINT_WIDTH).reduce((accumulator, current): BreakPointMember => {
-  const breakPointKey = current as keyof BreakPointWidthMember
+export const breakPoint = Object.keys(BREAK_POINT).reduce((accumulator, current): BreakPointMember => {
+  const breakPointKey = current as keyof BreakPointValueMember
   accumulator[breakPointKey] = (args: TemplateStringsArray): import('styled-components').FlattenSimpleInterpolation => css`
-  @media (min-width: ${BREAK_POINT_WIDTH[breakPointKey]}px) {
-    ${css(args)}
-  }
+    /* stylelint-disable */
+    @media (min-width: ${BREAK_POINT[breakPointKey]}px) {
+      ${css(args)}
+    }
+    /* stylelint-enable */
   `
   return accumulator
 }, {} as BreakPointMember)

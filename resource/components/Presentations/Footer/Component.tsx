@@ -3,7 +3,7 @@
 */
 
 import styled from 'styled-components'
-import { BreakPoint } from '@/styles/StyleMixins'
+import { breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
@@ -28,7 +28,7 @@ const StyledComponent = styled(FooterComponent)`
     font-size: 1.5em;
     text-align: center;
     cursor: pointer;
-    ${BreakPoint.largeMobile` font-size: 2.4em `}
+    ${breakPoint.aboveLargeMobile` font-size: 2.4em `}
   }
 `
 

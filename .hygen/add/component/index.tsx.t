@@ -12,7 +12,7 @@ sh: "prettier --write 'resource/components/<%= chooseOutPutDir === 'Layouts' ? `
 
 import styled from 'styled-components'
 <% if (useBreakPoints) { -%>
-import { BreakPoint } from '@/styles/StyleMixins'
+import { breakPoint } from '@/styles/StyleMixins'
 <% } -%>
 import Logo from '@/materials/images/logo.webp'
 
@@ -39,7 +39,7 @@ const StyledComponent = styled(<%= Name %>LayoutComponent)`
     min-height: -webkit-fill-available;
   }
   <% if (useBreakPoints) { -%>
-    ${BreakPoint.largeMobile``}
+    ${breakPoint.aboveLargeMobile``}
   <% } %>
   .main-content {
     display: flex;
