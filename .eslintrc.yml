@@ -20,6 +20,7 @@ plugins:
   - react
   - react-hooks
   - testing-library
+  - jsx-a11y
   - jest-dom
 settings:
   # Import webpack Alias Setting, Linting for 'import/no-unresolved'.
@@ -68,6 +69,13 @@ rules:
     - error
     - allow:
         - '~'
+  'jsx-a11y/alt-text':
+    - warn
+    - elements:
+        - 'img'
+      img:
+        - 'Image'
+  'import/no-anonymous-default-export': warn
   'import/order': off
   'sort-keys': off
   'no-multiple-empty-lines': off
