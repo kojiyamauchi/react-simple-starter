@@ -6,10 +6,12 @@ import { Navigation } from './Component'
 import { BrowserRouter } from 'react-router-dom'
 // import { action } from '@storybook/addon-actions'
 
-export default {
+const storiesInfo = {
   title: 'Navigation Component',
   component: Navigation
 }
+
+export default storiesInfo
 
 export const Default = (): JSX.Element => {
   return (
