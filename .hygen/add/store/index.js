@@ -2,7 +2,7 @@ const logFontBold = '\x1b[1m'
 const logFontColorCyan = '\u001b[36m'
 const logFontColorRed = '\u001b[31m'
 const logFontReset = '\x1b[0m'
-const errorMessage = `🙄 ${logFontBold}${logFontColorRed}Forget to enter the name command? Check it again.${logFontReset}\nCommand: 🌞 ${logFontBold}${logFontColorCyan}yarn frontend:add:store [name]${logFontReset}`
+const errorMessage = `🙄 ${logFontBold}${logFontColorRed}Forget to enter the name command? Check it again.${logFontReset}\nCommand: 🌞 ${logFontBold}${logFontColorCyan}yarn add:store [name]${logFontReset}`
 
 module.exports = {
   prompt: async ({ prompter, args }) => {
