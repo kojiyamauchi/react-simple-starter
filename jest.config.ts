@@ -20,7 +20,8 @@ const config: Config.InitialOptions = {
   testMatch: [
     '**/resource/tests/**/*.test.+(ts|tsx|js|jsx)',
     '**/resource/components/**/*.test.+(ts|tsx|js|jsx)',
-    '**/resource/hooks/**/*.test.+(ts|tsx|js|jsx)'
+    '**/resource/hooks/**/*.test.+(ts|tsx|js|jsx)',
+    '**/resource/ducks/**/*.test.+(ts|tsx|js|jsx)'
   ]
 }
 
