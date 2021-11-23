@@ -3,18 +3,18 @@
 exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <div
-    class="sc-eCApnc dMklzQ ui-test layout fixed-layout"
+    class="sc-eCImPb jMqYIF ui-test layout fixed-layout"
   >
     <header
-      class="sc-dlnjwi hZXVPZ"
+      class="sc-dkPtRN fFsEcj"
     >
       <h1
-        class="sc-bdnxRM dtcuWo primary-heading"
+        class="sc-bdvvtL dvdnMu primary-heading"
       >
         React Simple Starter
       </h1>
       <ul
-        class="sc-gtsrHT gFKEKQ"
+        class="sc-gsDKAQ jPcCTy"
       >
         <li>
           <a
@@ -54,7 +54,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
       class="main-content"
     />
     <footer
-      class="sc-hKFxyN ciTNVU"
+      class="sc-hKwDye cpiELR"
     >
       <a
         class="link-letter"

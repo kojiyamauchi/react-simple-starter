@@ -3,15 +3,15 @@
 exports[`Header Container Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <header
-    class="sc-dlnjwi hZXVPZ"
+    class="sc-dkPtRN fFsEcj"
   >
     <h1
-      class="sc-bdnxRM dtcuWo primary-heading"
+      class="sc-bdvvtL dvdnMu primary-heading"
     >
       React Simple Starter
     </h1>
     <ul
-      class="sc-gtsrHT gFKEKQ"
+      class="sc-gsDKAQ jPcCTy"
     >
       <li>
         <a
