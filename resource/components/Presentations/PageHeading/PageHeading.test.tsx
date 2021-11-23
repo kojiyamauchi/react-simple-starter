@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   PageHeading Component Unit Test.
 */

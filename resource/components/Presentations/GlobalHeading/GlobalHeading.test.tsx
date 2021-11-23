@@ -1,7 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
 /*
   GlobalHeading Component Unit Test.
 */
-
 import { GlobalHeading } from './Component'
 import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
