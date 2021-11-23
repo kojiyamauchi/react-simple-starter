@@ -157,10 +157,6 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba();
   }
 
-  ::-moz-selection {
-    background: rgba();
-  }
-
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     /* Safari Hack */
 
