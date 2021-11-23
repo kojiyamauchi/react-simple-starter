@@ -1,4 +1,6 @@
 syntax: scss
+processors:
+  - stylelint-processor-styled-components
 extends:
   - stylelint-config-recommended-scss
   - stylelint-config-recess-order
