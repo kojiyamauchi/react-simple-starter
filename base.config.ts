@@ -12,12 +12,5 @@ export const baseSeo = {
   ogpImage: 'ogp_image.jpg'
 } as const
 
-export const pathPrefix = (): string => {
-  const config = {
-    enable: true,
-    subDir: '/react-simple-starter'
-  }
-  return config.enable ? config.subDir : ''
-}
-
+export const pathPrefix = webpackPathPrefix ? `/${webpackPathPrefix}` : ''
 export const branchesMode = webpackEnvMode === 'production' ? '🛹' : webpackEnvMode === 'development' ? '🏄‍♂️' : '🏂'
