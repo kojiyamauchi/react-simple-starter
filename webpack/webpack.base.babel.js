@@ -11,8 +11,11 @@ import ESLintPlugin from 'eslint-webpack-plugin'
 import WebpackNotifierPlugin from 'webpack-notifier'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const webpackEnvMode = process.argv.includes('production') ? 'production' : process.argv.includes('development') ? 'development' : null
-const ecmaFileNames = webpackEnvMode === 'production' ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
+const pathPrefix = 'react-simple-starter'
+process.env.npm_package_config_path_prefix = pathPrefix ? `/${pathPrefix}/` : ''
+const envMode = process.argv.includes('production') ? 'production' : process.argv.includes('development') ? 'development' : null
+const ecmaFileNames = envMode === 'production' ? '[name].min.js?[fullhash]' : '[name].js?[fullhash]'
+
 // Setting.
 export default {
   // Necessary for HMR.
@@ -202,13 +205,32 @@ export default {
       }
     }),
     // Notify Desktop When a TypeScript Error.
-    new ForkTsCheckerNotifierWebpackPlugin({ title: 'TypeScript | Client' }),
+    new ForkTsCheckerNotifierWebpackPlugin({
+      title: 'Client | TypeScript'
+    }),
     // ESLint on webpack.
-    new ESLintPlugin({ files: [path.resolve(__dirname, '../resource/**/*.{ts,tsx,js,jsx}')], failOnWarning: true }),
+    new ESLintPlugin({
+      files: [path.resolve(__dirname, '../resource/**/*.{ts,tsx}')],
+      failOnWarning: true
+    }),
     // Notify Desktop When a ESLint or Webpack Build Error.
-    new WebpackNotifierPlugin({ title: 'ESLint or Webpack Build | Client' }),
+    new WebpackNotifierPlugin({
+      title: (params) => {
+        const status = `${params.status.charAt(0).toUpperCase()}${params.status.slice(1)}`
+        if (params.message.includes('eslint')) {
+          return `🧐 Client | ESLint - ${status}`
+        } else if (params.message.includes('Stylelint')) {
+          return `🧐 Client | Stylelint - ${status}`
+        } else {
+          return `🏗 Client | Webpack Build - ${status}`
+        }
+      }
+    }),
     // Use Env Variable on Client Side.
-    new webpack.DefinePlugin({ webpackEnvMode: JSON.stringify(webpackEnvMode) }),
+    new webpack.DefinePlugin({
+      webpackEnvMode: JSON.stringify(envMode),
+      webpackPathPrefix: JSON.stringify(pathPrefix)
+    }),
     // Generate HTML for Endpoint.
     new HtmlWebpackPlugin({
       filename: 'index.html',
