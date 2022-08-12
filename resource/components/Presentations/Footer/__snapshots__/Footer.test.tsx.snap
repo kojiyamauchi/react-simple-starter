@@ -3,7 +3,7 @@
 exports[`Footer Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <footer
-    class="sc-bdvvtL kzoPkL"
+    class="sc-bczRLJ haCUfg"
   >
     <a
       class="link-letter"
@@ -11,7 +11,7 @@ exports[`Footer Component Unit Test Snapshot Testing 1`] = `
       rel="noreferrer"
       target="_blank"
     >
-      © 2021 All The Small Things, All Rights Reserved.
+      © 2022 All The Small Things, All Rights Reserved.
     </a>
   </footer>
 </DocumentFragment>

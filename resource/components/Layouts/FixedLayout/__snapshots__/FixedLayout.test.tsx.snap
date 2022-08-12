@@ -3,23 +3,23 @@
 exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <div
-    class="sc-eCImPb jMqYIF ui-test layout fixed-layout"
+    class="sc-eCYdqJ bZNfEP ui-test layout fixed-layout"
   >
     <header
-      class="sc-dkPtRN fFsEcj"
+      class="sc-dkzDqf jLKyMU"
     >
       <h1
-        class="sc-bdvvtL dvdnMu primary-heading"
+        class="sc-bczRLJ jeKidp primary-heading"
       >
         React Simple Starter
       </h1>
       <ul
-        class="sc-gsDKAQ jPcCTy"
+        class="sc-gsnTZi jgvYym"
       >
         <li>
           <a
             class="link-letter"
-            href="/react-simple-starter/"
+            href="/"
           >
             Primary Page
           </a>
@@ -27,7 +27,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
         <li>
           <a
             class="link-letter"
-            href="/react-simple-starter/second"
+            href="/second"
           >
             Secondary Page
           </a>
@@ -35,7 +35,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
         <li>
           <a
             class="link-letter"
-            href="/react-simple-starter/third"
+            href="/third"
           >
             Third Page
           </a>
@@ -43,7 +43,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
         <li>
           <a
             class="link-letter"
-            href="/react-simple-starter/fourth"
+            href="/fourth"
           >
             Fourth Page
           </a>
@@ -54,7 +54,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
       class="main-content"
     />
     <footer
-      class="sc-hKwDye cpiELR"
+      class="sc-hKMtZM bvcVEG"
     >
       <a
         class="link-letter"
@@ -62,7 +62,7 @@ exports[`Fixed Layout Component Unit Test Snapshot Testing 1`] = `
         rel="noreferrer"
         target="_blank"
       >
-        © 2021 All The Small Things, All Rights Reserved.
+        © 2022 All The Small Things, All Rights Reserved.
       </a>
     </footer>
   </div>
