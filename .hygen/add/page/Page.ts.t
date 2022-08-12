@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom'
 import { Layout } from '@/components/Layouts/'
 import { SEO } from '@/components/Seo/'
 
-export const <%= Name %>Page: React.VFC = (): JSX.Element => {
+export const <%= Name %>Page: React.FC = (): JSX.Element => {
   const location = useLocation()
 
   return (

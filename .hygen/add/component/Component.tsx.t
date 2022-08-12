@@ -28,14 +28,14 @@ type Props = {
   <% } %>
 }
 
-const <%= componentName %>Component: React.<%= chooseComponentTypes === 'Function Component' ? 'FC' : 'VFC' %><Props> = ({
+const <%= componentName %>Component: React.FC<Props> = ({
   className
   <% if (addPropsNumber > 0) { -%>
     <% Array.from({ length: addPropsNumber }, (_info, index) => { -%>
       <%= `,${h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`])}` %>
     <% }) -%>
   <% } -%>
-  <%= chooseComponentTypes === 'Function Component' ? ',children' : '' -%>
+  <%= addChildren ? ',children' : '' -%>
   }): JSX.Element => {
   <% if (useHooks) { %>
   const {
@@ -61,7 +61,7 @@ const <%= componentName %>Component: React.<%= chooseComponentTypes === 'Functio
         <%= `{${h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`])}}` %>
       <% }) -%>
     <% } -%>
-    <% if (chooseComponentTypes === 'Function Component') { -%>
+    <% if (addChildren) { -%>
       { children }
     <% } %>
     </<%= wrapperTags %>>
