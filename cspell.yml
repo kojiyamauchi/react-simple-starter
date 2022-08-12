@@ -1,0 +1,55 @@
+version: 0.2
+language: en
+words:
+  - apng
+  - browserconfig
+  - callout
+  - Cond
+  - corejs
+  - docgen
+  - Docgen
+  - dpcm
+  - esbenp
+  - favicons
+  - foo
+  - fullhash
+  - Hiragino
+  - hygen
+  - jsdom
+  - Kaku
+  - kojiyamauchi
+  - meiryo
+  - msapplication
+  - mstile
+  - Neue
+  - nocheck
+  - nofilter
+  - Noto
+  - peaceiris
+  - persistor
+  - pmmmwh
+  - postcss
+  - reduxjs
+  - reviewdog
+  - rimraf
+  - STYLELINT
+  - stylelintrc
+  - TYPECHECK
+  - unfetch
+  - webp
+  - Webps
+  - yarnclean
+flagWords:
+  - hte
+ignorePaths:
+  - node_modules/**
+  - delivery/**
+  - ./**/**/*.test.tsx.snap
+  - ./**/**/*.webp
+  - ./**/**/*.svg
+  - .git/**
+  - .husky/**
+  - .history/**
+  - yarn.lock
+  - tsconfig.tsbuildinfo
+  - cspell.yml

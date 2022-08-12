@@ -22,6 +22,7 @@ plugins:
   - testing-library
   - jsx-a11y
   - jest-dom
+  - simple-import-sort
 settings:
   # Import webpack Alias Setting, Linting for 'import/no-unresolved'.
   'import/resolver':
@@ -94,4 +95,6 @@ rules:
   'react-hooks/exhaustive-deps': warn
   'react/jsx-uses-react': off
   'react/react-in-jsx-scope': off
+  'simple-import-sort/imports': error
+  'simple-import-sort/exports': error
   '@typescript-eslint/ban-ts-comment': off

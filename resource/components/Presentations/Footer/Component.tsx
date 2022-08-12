@@ -3,13 +3,14 @@
 */
 
 import styled from 'styled-components'
+
 import { breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
 }
 
-const FooterComponent: React.VFC<Props> = ({ className }): JSX.Element => (
+const FooterComponent: React.FC<Props> = ({ className }): JSX.Element => (
   <footer className={className}>
     <a href="http://kojiyamauchi.com" className="link-letter" target="_blank" rel="noreferrer">
       © {new Date().getFullYear()} All The Small Things, All Rights Reserved.

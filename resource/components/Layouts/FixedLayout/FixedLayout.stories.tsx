@@ -2,8 +2,9 @@
   Fixed Layout Component Storybook.
 */
 
-import { FixedLayout } from './'
 import { BrowserRouter } from 'react-router-dom'
+
+import { FixedLayout } from './'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

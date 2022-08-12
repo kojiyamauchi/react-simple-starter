@@ -8,6 +8,7 @@ import { FluidLayout } from '@/components/Layouts/FluidLayout'
 type Props = {
   pages: string
   chooseLayout: 'fixedLayout' | 'fluidLayout'
+  children?: React.ReactNode
 }
 
 const switchComponent = (chooseLayout: Props['chooseLayout'], pages: string, children: React.ReactNode): JSX.Element => {

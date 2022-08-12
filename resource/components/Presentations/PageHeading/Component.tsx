@@ -3,6 +3,7 @@
 */
 
 import styled from 'styled-components'
+
 import { breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
   translation?: boolean
 }
 
-const PageHeadingComponent: React.VFC<Props> = ({ className, letter }): JSX.Element => (
+const PageHeadingComponent: React.FC<Props> = ({ className, letter }): JSX.Element => (
   <h2 className={`${className} secondary-heading`}>This is {letter} Page.</h2>
 )
 

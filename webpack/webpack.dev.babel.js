@@ -21,6 +21,7 @@ export default merge(webpackBase, {
   },
   watchOptions: {
     // Using When File Update is Not Detected Correctly.
+    ignored: /node_modules/,
     poll: true
   },
   plugins: [],

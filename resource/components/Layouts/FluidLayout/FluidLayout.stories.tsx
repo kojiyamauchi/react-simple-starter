@@ -2,8 +2,9 @@
   Fluid Layout Component Storybook.
 */
 
-import { FluidLayout } from './'
 import { BrowserRouter } from 'react-router-dom'
+
+import { FluidLayout } from './'
 // import { action } from '@storybook/addon-actions'
 
 const storiesInfo = {

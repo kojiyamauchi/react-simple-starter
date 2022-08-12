@@ -3,12 +3,12 @@
 exports[`Navigation Component Unit Test Snapshot Testing 1`] = `
 <DocumentFragment>
   <ul
-    class="sc-bdvvtL kcRiWP"
+    class="sc-bczRLJ ldwuWE"
   >
     <li>
       <a
         class="link-letter"
-        href="/react-simple-starter/"
+        href="/"
       >
         Primary Page
       </a>
@@ -16,7 +16,7 @@ exports[`Navigation Component Unit Test Snapshot Testing 1`] = `
     <li>
       <a
         class="link-letter"
-        href="/react-simple-starter/second"
+        href="/second"
       >
         Secondary Page
       </a>
@@ -24,7 +24,7 @@ exports[`Navigation Component Unit Test Snapshot Testing 1`] = `
     <li>
       <a
         class="link-letter"
-        href="/react-simple-starter/third"
+        href="/third"
       >
         Third Page
       </a>
@@ -32,7 +32,7 @@ exports[`Navigation Component Unit Test Snapshot Testing 1`] = `
     <li>
       <a
         class="link-letter"
-        href="/react-simple-starter/fourth"
+        href="/fourth"
       >
         Fourth Page
       </a>

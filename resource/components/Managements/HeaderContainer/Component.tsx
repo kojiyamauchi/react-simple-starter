@@ -2,15 +2,16 @@
   Header Container Component.
 */
 
+import styled from 'styled-components'
+
 import { GlobalHeading } from '@/components/Presentations/GlobalHeading'
 import { Navigation } from '@/components/Presentations/Navigation'
-import styled from 'styled-components'
 
 type Props = {
   className?: string
 }
 
-const HeaderContainerComponent: React.VFC<Props> = ({ className }): JSX.Element => {
+const HeaderContainerComponent: React.FC<Props> = ({ className }): JSX.Element => {
   return (
     <header className={className}>
       <GlobalHeading />

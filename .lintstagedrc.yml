@@ -2,4 +2,5 @@
   - prettier --write
   - eslint --fix --max-warnings 0
 ./**/*.{js,jsx}: prettier --write
-resource/**/*.{ts,tsx,js,jsx}: stylelint --fix
+resource/**/*.{ts,tsx}: stylelint --fix
+./**/*: cspell --dot --no-must-find-files
