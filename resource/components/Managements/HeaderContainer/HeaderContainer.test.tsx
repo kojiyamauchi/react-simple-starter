@@ -1,14 +1,13 @@
-/**
- * @jest-environment jsdom
- */
 /*
   Header Container Component Unit Test.
 */
 
-import { HeaderContainer } from './Component'
-import { BrowserRouter } from 'react-router-dom'
-import { render /* ,screen */ } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+
+import { render /* ,screen */ } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+
+import { HeaderContainer } from './Component'
 // import userEvent from '@testing-library/user-event'
 
 describe('Header Container Component Unit Test', () => {
