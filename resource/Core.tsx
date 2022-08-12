@@ -2,15 +2,18 @@
   Core.
 */
 
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { GlobalStyle } from '@/styles/StyleGlobal'
-import { Router } from '@/router'
 
-ReactDOM.render(
+import { Router } from '@/router'
+import { GlobalStyle } from '@/styles/StyleGlobal'
+
+const container = document.getElementById('app')
+const root = createRoot(container!)
+
+root.render(
   <BrowserRouter>
     <GlobalStyle />
     <Router />
-  </BrowserRouter>,
-  document.getElementById('app')
+  </BrowserRouter>
 )
