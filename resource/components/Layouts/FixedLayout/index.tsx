@@ -2,14 +2,16 @@
   Fixed Layout.
 */
 
+import styled from 'styled-components'
+
 import { HeaderContainer } from '@/components/Managements/HeaderContainer'
 import { Footer } from '@/components/Presentations/Footer'
-import styled from 'styled-components'
 import Logo from '@/materials/images/logo.webp'
 
 type Props = {
   className?: string
   pages: string
+  children?: React.ReactNode
 }
 
 const FixedLayoutComponent: React.FC<Props> = ({ className, pages, children }): JSX.Element => {

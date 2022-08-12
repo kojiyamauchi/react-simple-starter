@@ -2,13 +2,14 @@
   Global Heading Component.
 */
 import styled from 'styled-components'
+
 import { breakPoint } from '@/styles/StyleMixins'
 
 type Props = {
   className?: string
 }
 
-const GlobalHeadingComponent: React.VFC<Props> = ({ className }): JSX.Element => <h1 className={`${className} primary-heading`}>React Simple Starter</h1>
+const GlobalHeadingComponent: React.FC<Props> = ({ className }): JSX.Element => <h1 className={`${className} primary-heading`}>React Simple Starter</h1>
 
 const StyledComponent = styled(GlobalHeadingComponent)`
   width: 100%;

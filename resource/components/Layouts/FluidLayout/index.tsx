@@ -3,11 +3,13 @@
 */
 
 import styled from 'styled-components'
+
 import Logo from '@/materials/images/logo.webp'
 
 type Props = {
   className?: string
   pages: string
+  children?: React.ReactNode
 }
 
 const FluidLayoutComponent: React.FC<Props> = ({ className, pages, children }): JSX.Element => {
