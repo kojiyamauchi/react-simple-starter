@@ -3,8 +3,9 @@
 */
 
 import { css } from 'styled-components'
+
 import { BREAK_POINT } from '@/styles/StyleConstants'
-import { BreakPointValueMember, BreakPointMember } from '@/types/type'
+import { BreakPointMember, BreakPointValueMember } from '@/types/type'
 
 // Break Point.
 /*

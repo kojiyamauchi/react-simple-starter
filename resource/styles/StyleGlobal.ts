@@ -3,7 +3,8 @@
 */
 
 import { createGlobalStyle } from 'styled-components'
-import { GLOBAL_FONT, GLOBAL_COLOR } from '@/styles/StyleConstants'
+
+import { GLOBAL_COLOR, GLOBAL_FONT } from '@/styles/StyleConstants'
 
 export const GlobalStyle = createGlobalStyle`
   a,
