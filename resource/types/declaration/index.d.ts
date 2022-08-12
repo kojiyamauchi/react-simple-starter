@@ -4,3 +4,4 @@ declare module '*.jpg'
 declare module '*.png'
 declare module '*.gif'
 declare const webpackEnvMode: 'production' | 'development' | null
+declare const webpackPathPrefix: string | null
