@@ -25,7 +25,8 @@ type Props = {
     <% Array.from({ length: addPropsNumber }, (_info, index) => { -%>
       <%= h.changeCase.camel(addPropsDetails[index][`addPropsName${index + 1}`]) %>: <%- addPropsDetails[index][`addPropsType${index + 1}`] %>
     <% }) %>
-  <% } %>
+  <% } -%>
+  <%= addChildren ? 'children?: React.ReactNode' : '' -%>
 }
 
 const <%= componentName %>Component: React.FC<Props> = ({

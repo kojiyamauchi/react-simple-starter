@@ -19,6 +19,7 @@ import Logo from '@/materials/images/logo.webp'
 type Props = {
   className?: string
   pages: string
+  children?: React.ReactNode
 }
 
 const <%= Name %>LayoutComponent: React.FC<Props> = ({ className, pages, children }): JSX.Element => {

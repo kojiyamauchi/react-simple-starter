@@ -17,12 +17,13 @@ export const store = configureStore({
     barStore: barReducer
   },
   devTools: process.env.NODE_ENV !== 'production',
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware) => {
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
       }
     })
+  }
 })
 
 export const persistor = persistStore(store)
